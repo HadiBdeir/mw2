@@ -7,9 +7,10 @@ import Card, {
   Facts,
   Image,
   Remember,
-  InformationCard,
   SmallButton,
   BigScreenTopBar,
+  DigitalPrivacyHeader,
+  DigitalPrivacyHeaderContent,
 } from "./Components.js";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
@@ -78,63 +79,36 @@ function DigitalPrivacyScreen() {
           />
         </div>
       </div>
+
       <div>
-        <InformationCard
-          title={
-            <div style={{ textAlign: "center" }}>
-              The dangers of poor
-              <br />
-              digital privacy
-            </div>
-          }
-          words={["Cyberattacks", "Blackmail", "Cyberstalking"]}
-        />
-      </div>
-      <div>
+        <DigitalPrivacyHeader />
+        <DigitalPrivacyHeaderContent />
         <Remember
-          style={{ paddingBottom: "20px" }}
           source={
             "https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html"
           }
-          title={<>Privacy essentials</>}
-          content={
-            <>
-              <ul>
-                <li>
-                  Anything you put on the internet is now public information,
-                  and you may be unable to delete it.
-                </li>
-                <li>
-                  When you post photos of your child on public social media
-                  accounts, you are doing this without their consent.
-                </li>
-              </ul>
-            </>
-          }
+          title={"Remember"}
+          content={[
+            "Anything you put on the internet is now public information, and you may be unable to delete it.",
+            "When you post photos of your child on public social media accounts, you are doing this without their consent.",
+          ]}
         />
       </div>
       <div
+        className="background-color-verylightpink"
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          padding: "20px",
         }}
       >
         <div
           style={{
-            border: "none",
-            backgroundColor: "rgb(247, 234, 236)",
             justifyContent: "center",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            maxWidth: "fit-content",
-            borderRadius: "17px",
-            margin: isMobile ? "20px" : "40px",
-            minHeight: "750px",
-            height: "auto",
-            padding: isMobile ? "30px 20px" : "40px 50px",
-            boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.3)",
           }}
         >
           <h1
@@ -210,31 +184,42 @@ function DigitalPrivacyScreen() {
         </div>
       </div>
       <div
-        className="learning-center-styling"
+        className="resources-part-styling"
         style={{
           justifyContent: "center",
           paddingTop: "20px",
           paddingBottom: "60px",
         }}
       >
-        <h1>Related Topics</h1>
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: isMobile ? undefined : "50px",
+            paddingTop: isMobile ? undefined : "70px",
+            paddingBottom: isMobile ? undefined : "40px",
+          }}
+        >
+          Related Topics
+        </h1>
         <div className="pinkcard-row-styling">
-          <PinkCard
-            title={
-              <>
-                Setting up 2-Factor
-                <br />
-                Authentication
-              </>
-            }
-            content={
-              <>
-                Keep your account safe with
-                <br />
-                an extra security step.
-              </>
-            }
-          />
+          <div>
+            <PinkCard
+              title={
+                <>
+                  Setting up 2-Factor
+                  <br />
+                  Authentication
+                </>
+              }
+              content={
+                <>
+                  Keep your account safe with
+                  <br />
+                  an extra security step.
+                </>
+              }
+            />
+          </div>
           <div onClick={() => navigate("/creating_strong_password_screen")}>
             <PinkCard
               title={
@@ -247,6 +232,17 @@ function DigitalPrivacyScreen() {
                 <>
                   Learn how to create a<br />
                   strong, safe password.
+                </>
+              }
+            />
+          </div>
+          <div>
+            <PinkCard
+              title={<>Phishing</>}
+              content={
+                <>
+                  A popular type of cyberattacks is phishing. <br />
+                  Learn how to protect yourself.
                 </>
               }
             />

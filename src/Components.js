@@ -79,6 +79,13 @@ function MiniCard({ title, link }) {
 }
 
 function PinkCard({ title, content, link }) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  
+    useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth < 768);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
   return (
     <a
       href={link}
@@ -89,10 +96,10 @@ function PinkCard({ title, content, link }) {
       <div
         style={{
           minWidth: "200px",
-          maxHeight: "150px",
+          height: isMobile ? undefined : "190px",
+          width: isMobile ? "240px" : undefined,
           border: "none",
-          padding: "20px",
-          margin: "10px",
+          padding: "1px 20px 0px",
           borderRadius: "0px 15px 15px 0px",
           backgroundColor: "rgb(247, 234, 236)",
           borderLeft: "7px solid #FF6933",
@@ -104,8 +111,8 @@ function PinkCard({ title, content, link }) {
         onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
         onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
-        <h3 style={{ color: "#FF5E00" }}>{title}</h3>
-        <p style={{ fontWeight: "normal", color: "black" }}>{content}</p>
+        <h3 style={{ color: "#FF5E00", fontSize: isMobile ? undefined : "22px" }}>{title}</h3>
+        <p style={{ fontWeight: "normal", color: "black", maxWidth: isMobile ? undefined : "180px" }}>{content}</p>
       </div>
     </a>
   );
@@ -629,7 +636,7 @@ const InfoPackWithButton = ({ picture, alt, title, description = [] }) => {
         textAlign: isMobile ? "center" : "left",
         width: isMobile ? "300px" : "823px",
         backgroundColor: "white",
-        minHeight: isMobile ? "auto" : "50px",
+        height: isMobile ? undefined : "170px", 
         padding: isMobile ? "40px 20px" : "15px 20px",
         margin: "10px auto",
         borderBottomRightRadius: "20px",
@@ -641,8 +648,8 @@ const InfoPackWithButton = ({ picture, alt, title, description = [] }) => {
       <div
         style={{
           position: "relative",
-          width: isMobile ? "100px" : "80px",
-          height: isMobile ? "100px" : "80px",
+          width: isMobile ? "100px" : "100px",
+          height: isMobile ? "100px" : "100px",
           minWidth: isMobile ? "100px" : "80px",
           borderRadius: "50%",
           backgroundColor: "darkcyan",
@@ -679,50 +686,19 @@ const InfoPackWithButton = ({ picture, alt, title, description = [] }) => {
       >
         <h2
           style={{
-            fontSize: isMobile ? "24px" : "28px",
+            fontSize: isMobile ? "24px" : "32px",
             marginBottom: isMobile ? "15px" : "10px",
             lineHeight: "1.2",
             marginTop: 0,
             alignItems: "center",
-            textAlign: "center",
+            textAlign: isMobile ? "center" : "left",
+            maxWidth: isMobile ? undefined : "600px",
           }}
         >
           {title}
         </h2>
 
-        {Array.isArray(description) && description.length > 0 && (
-          <>
-            {description.length === 1 ? (
-              <p
-                style={{
-                  fontSize: isMobile ? "16px" : "18px",
-                  lineHeight: "1.4",
-                  margin: 0,
-                  textAlign: "center",
-                }}
-              >
-                {description[0]}
-              </p>
-            ) : (
-              <ul
-                style={{ paddingLeft: isMobile ? "20px" : "25px", margin: 0 }}
-              >
-                {description.map((item, index) => (
-                  <li
-                    key={index}
-                    style={{
-                      fontSize: isMobile ? "16px" : "18px",
-                      lineHeight: "1.4",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </>
-        )}
+        <p style={{fontSize: "20px"}}>{description}</p>
       </div>
     </div>
   );
@@ -1018,38 +994,157 @@ function Facts({ title, content, source, style = {} }) {
   );
 }
 
-function Remember({ title, content, source, style = {} }) {
+function  DigitalPrivacyHeader() {
+  return (
+    <div className="header-container">
+      <h1 className="header-title">
+        The dangers of poor digital privacy
+      </h1>
+    </div>
+  );
+}
+
+function DigitalPrivacyHeaderContent() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: isMobile ? "20px" : "100px",
+      maxWidth: "1200px",
+      margin: "0 auto",
+      paddingBottom: "40px",
+      flexDirection: isMobile ? "column" : "row",
+      padding: isMobile ? "0 20px 40px 20px" : "0 0 40px 0"
+    }}>
+      <div style={{
+        flex: "0 0 auto"
+      }}>
+        <img 
+          src="DigitalPrivacyPersonIcon.png"
+          alt="Digital Privacy Illustration"
+          style={{
+            width: isMobile ? "250px" : "400px",
+            height: "auto"
+          }}
+        />
+      </div>
+      <div style={{
+        maxWidth: isMobile ? "100%" : "500px",
+        flex: "1"
+      }}>
+        <p style={{
+          fontSize: isMobile ? "18px" : "20px",
+          lineHeight: "1.6",
+          color: "#333",
+          textAlign: isMobile ? "center" : "left"
+        }}>
+          Poor digital privacy could lead to consequences that affect you, your family, and your friends. Some of these consequences could be:
+        </p>
+        <ul style={{
+          fontSize: isMobile ? "18px" : "20px",
+          lineHeight: "1.4",
+          color: "#333",
+          listStylePosition: "outside",
+          margin: isMobile ? "0 auto" : undefined,
+          display: "table",
+          paddingRight: isMobile ? "20px" : undefined,
+        }}>
+          <li style={{ marginBottom: "12px" }}>
+            Cyberattacks
+          </li>
+          <li style={{ marginBottom: "12px" }}>
+            Blackmail
+          </li>
+          <li style={{ marginBottom: "12px" }}>
+            Cyberstalking
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function Remember({ title, content, source }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div
       style={{
-        minHeight: "185px",
-        margin: "30px auto",
-        width: "80%",
-        maxWidth: "950px",
-        border: "none",
-        padding: "20px",
-        paddingBottom: "0px",
-        borderRadius: "5px",
-        backgroundColor: "#FFDAB9",
-        borderLeft: "10px solid #FF6933",
-        boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.3)",
-        cursor: "pointer",
-        position: "relative",
-        ...style,
+        width: "100%",
+        maxWidth: "1000px",
+        margin: "20px auto",
+        marginLeft: "auto",
+        marginRight: "auto",
+        padding: "0 15px",
+        boxSizing: "border-box",
+        paddingBottom: isMobile ? "20px" : "150px",
       }}
     >
-      <h3 style={{ color: "#FF6933" }}>{title}</h3>
-      <hr
+      <div
         style={{
-          border: "none",
-          height: "2px",
-          backgroundColor: "#FF6933",
-          marginBottom: "15px",
-          width: "99%",
-          marginLeft: "0",
+          display: 'flex',
+          backgroundColor: '#ffdbb7',
+          borderRadius: '6px',
+          paddingTop: '15px',
+          paddingLeft: "13px",
+          paddingRight: "13px",
+          borderLeft: '16px solid #ff6d3a',
+          boxSizing: "border-box"
         }}
-      />
-      <p style={{ fontWeight: "normal", color: "black" }}>{content}</p>
+      >
+        <div style={{ flex: 1, width: "100%" }}>
+          <h3
+            style={{
+              color: '#ff6d3a',
+              marginTop: "10px",
+              marginBottom: '5px',
+              fontSize: 'clamp(20px, 5vw, 30px)',
+              wordWrap: "break-word",
+              hyphens: "auto"
+            }}
+          >
+            {title}
+          </h3>
+          <hr
+            style={{
+              border: "none",
+              height: "3px",
+              backgroundColor: "#FF6933",
+              width: "93%",
+              marginLeft: "0",
+            }}
+          />
+          <ul style={{ 
+            margin: 0, 
+            paddingLeft: '20px',
+            paddingRight: '10px',
+            paddingBottom: "25px", 
+            fontSize: "clamp(14px, 4vw, 18px)",
+            maxWidth: "85%",
+            wordWrap: "break-word",
+          }}>
+            {content.map((contentItem, index) => (
+              <li key={index} style={{ marginBottom: "8px" }}>
+                {contentItem}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
@@ -1175,111 +1270,6 @@ const ReportButton = () => {
   );
 };
 
-const InformationCard = ({ title, words = [], style = {}, hrStyle = {} }) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const isMobile = windowWidth < 768;
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const containerStyle = {
-    width: isMobile ? "90%" : "600px",
-    maxWidth: "90%",
-    borderRadius: isMobile ? "15px" : "20px",
-    boxShadow: "0px 1px 5px 2px rgba(0, 0, 0, 0.3)",
-    backgroundColor: "white",
-    paddingBottom: isMobile ? "20px" : "40px",
-    margin: isMobile ? "10px auto" : "20px auto",
-    marginBottom: isMobile ? "40px" : "80px",
-    overflow: "hidden",
-    marginTop: "40px",
-    ...style,
-  };
-
-  if (style.width === "860px" && isMobile) {
-    containerStyle.width = "90%";
-  }
-
-  const wordStyle = isMobile
-    ? {
-        backgroundColor: "#40E0D0CC",
-        color: "#005050",
-        borderRadius: "18px",
-        width: "90%",
-        height: "100px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        fontWeight: "bold",
-        fontSize: "24px",
-        margin: "20px 0",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-      }
-    : {
-        backgroundColor: "#40E0D0CC",
-        color: "#005050",
-        borderRadius: "18px",
-        width: "350px",
-        height: "83px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        fontWeight: "bold",
-        fontSize: "24px",
-        margin: "20px 0",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-      };
-
-  return (
-    <div style={containerStyle}>
-      <h1
-        style={{
-          fontSize: isMobile ? "36px" : "50px",
-          paddingTop: isMobile ? "20px" : "40px", // reduced top padding
-          paddingLeft: isMobile ? "15px" : "0",
-          paddingRight: isMobile ? "15px" : "0",
-          color: "#008B8B",
-          fontWeight: "bold",
-          textAlign: isMobile ? "center" : "inherit",
-        }}
-      >
-        {title}
-      </h1>
-      <hr
-        style={{
-          color: "#40E0D0CC",
-          height: "5px",
-          width: isMobile ? "80%" : "92%",
-          backgroundColor: "#40E0D0",
-          border: "none",
-          margin: "15px auto 20px auto",
-          ...hrStyle,
-        }}
-      />
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          paddingLeft: isMobile ? "15px" : "0",
-          paddingRight: isMobile ? "15px" : "0",
-        }}
-      >
-        {words.map((word, index) => (
-          <div key={index} style={wordStyle}>
-            {word}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const PropertiesOfAStrongPassword = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -1761,10 +1751,11 @@ export {
   Remember,
   BlackmailHelp,
   ReportButton,
-  InformationCard,
   PropertiesOfAStrongPassword,
   PasswordManager,
   WhyWouldSomeoneHackYou,
   BigScreenTopBar,
+  DigitalPrivacyHeader,
+  DigitalPrivacyHeaderContent,
 };
 export default Card;

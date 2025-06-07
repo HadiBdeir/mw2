@@ -80,6 +80,7 @@ function DeviceProtectionScreen() {
         </div>
       </div>
       <div
+        className="background-color-verylightpink"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -88,20 +89,15 @@ function DeviceProtectionScreen() {
       >
         <div
           style={{
-            border: "none",
-            backgroundColor: "rgb(247, 234, 236)",
             justifyContent: "center",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            maxWidth: "800px",
-            borderRadius: "17px",
             margin: "30px",
             height: "auto",
             minHeight: "750px",
             padding: "30px 20px",
             paddingTop: "10px",
-            boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.3)",
           }}
         >
           <h1 style={{ fontSize: "45px", textAlign: "left", width: "100%" }}>
@@ -217,14 +213,16 @@ function DeviceProtectionScreen() {
         />
       </div>
       <div
-        className="learning-center-styling"
+        className="resources-part-styling"
         style={{
           justifyContent: "center",
           paddingTop: "20px",
           paddingBottom: "60px",
         }}
       >
-        <h1>Related Topics</h1>
+        <h1 style={{ display: "flex", justifyContent: "center" }}>
+          Related Topics
+        </h1>
         <div className="pinkcard-row-styling">
           <PinkCard
             title={

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from "react";
 
-function LearningCenterCyberSecurityAndPrivacy() {
+function CyberSecurityAndPrivacy() {
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -220,4 +220,4 @@ function LearningCenterCyberSecurityAndPrivacy() {
   );
 }
 
-export default LearningCenterCyberSecurityAndPrivacy;
+export default CyberSecurityAndPrivacy;

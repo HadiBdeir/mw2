@@ -129,7 +129,15 @@ function BlackmailScreen() {
           paddingBottom: "60px",
         }}
       >
-        <h1>Related Topics</h1>
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: isMobile ? undefined : "50px",
+            paddingBottom: isMobile ? undefined : "40px",
+          }}
+        >
+          Related Topics
+        </h1>
         <div className="pinkcard-row-styling">
           <PinkCard
             title={

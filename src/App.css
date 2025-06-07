@@ -405,9 +405,21 @@ a{
 .pinkcard-row-styling {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 60px;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 767px) {
+  .pinkcard-row-styling {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 0px;
+  }
 }
 
 .learning-center-styling {
@@ -630,4 +642,32 @@ a{
   font-weight: normal;
   border: none;
   padding: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.header-title {
+  font-size: 64px;
+  margin-top: 150px;
+  max-width: 800px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .header-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-title {
+    font-size: 36px;
+    margin-top: 30px;
+    max-width: 100%;
+  }
 }
