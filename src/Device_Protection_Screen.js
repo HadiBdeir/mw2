@@ -6,6 +6,7 @@ import Card, {
   SmallButton,
   ExploreCard,
   BigScreenTopBar,
+  InfoPackWithButton,
 } from "./Components.js";
 import "./App.css";
 import React from "react";
@@ -104,52 +105,12 @@ function DeviceProtectionScreen() {
             To keep your device safe
           </h1>
           <div style={{ paddingLeft: "30px" }}>
-            <InfoPack
-              title={<>Limit access to your device</>}
-              description={
-                <>
-                  ● Set a strong password to protect your device and set
-                  Autolock on your phone and computer.
-                  <br />● Perform a factory reset on your device before you give
-                  it away or sell it.
-                </>
-              }
-            />
-            <InfoPack
-              title={<>Download apps from trusted sources</>}
-              description={
-                <>
-                  ● Only download applications from trusted sources such as the
-                  App Store, Google Play Store, and official
-                  <br />
-                  software websites.
-                </>
-              }
-            />
-            <InfoPack
-              title={<>Install AntiVirus and keep your device updated</>}
-              description={
-                <>
-                  ● Download Antivirus software to protect your device from
-                  viruses and keep it updated.
-                  <br />● Always update your Operating system (Windows, Android,
-                  MacOS, iOS) and enable Automatic Updates.
-                </>
-              }
-            />
-            <InfoPack
-              title={<>Avoid suspicious links and download requests</>}
-              description={
-                <>
-                  ● Do not click on ads or popups because it could download
-                  malware on your device without your knowledge.
-                  <br />
-                  ● Beware of emails and text messages with links attached to
-                  avoid phishing attacks.
-                  <br />● Do not download content from emails sent to you by
-                  strangers.
-                </>
-              }
+            <InfoPackWithButton
+              title={"Limit access to your device"}
+              description={[
+                "Set a strong password to protect your device and set Autolock on your phone and computer.",
+                "Perform a factory reset on your device before you give it away or sell it.",
+              ]}
             />
           </div>
         </div>
