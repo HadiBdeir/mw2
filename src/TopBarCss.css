@@ -1,0 +1,178 @@
+.mobile-search-container {
+  width: 100%;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-search-input {
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
+.mobile-search-input:focus {
+  outline: none;
+  border-color: darkOrange;
+  box-shadow: 0 0 8px rgba(255, 94, 0, 0.4);
+}
+
+.background-color-darkcyan {
+  background-color: darkcyan;
+  color: white;
+}
+
+/* Header structure with row for title and menu */
+.header-top-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  gap: 30px;
+  text-align: center;
+}
+
+.muwatana-title-styling {
+  color: white;
+  text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Mobile menu button styling */
+.mobile-menu-button {
+  display: none; /* Hidden by default on desktop */
+  font-size: 32px;
+  cursor: pointer;
+  margin-right: 20px;
+  align-self: center;
+  color: white;
+}
+
+.navigation-tab-links {
+  display: flex;
+  gap: 0;
+  position: absolute;
+  top: 0;
+  left: 77.5%;
+  /* right: -50%; */
+  transform: translateX(-50%);
+  z-index: 1000;
+  border: 2px solid rgba(255, 255, 255, 0.671);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  height: 60px;
+  align-items: stretch;
+}
+
+.navigation-tab-links p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0;
+  padding: 0 15px;
+  cursor: pointer;
+  border-right: 2px solid rgba(255, 255, 255, 0.671);
+  height: 100%;
+}
+
+.navigation-tab-links p:last-child {
+  border-right: none;
+  border-left: 2px solid rgba(255, 255, 255, 0.671);
+  margin-left: 10px;
+}
+
+.navigation-tab-links button {
+  margin-top: 17px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  display: block;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: darkcyan;
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 1px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
+/* Ensure the button itself is centered within its container */
+.contact-button {
+  color: white;
+  background-color: darkOrange;
+  width: 100%;
+  border-radius: 0; /* Remove border radius for full-width look */
+  padding: 12px 20px; /* Match padding with other nav items */
+  height: auto;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  display: block;
+}
+
+/* Contact button container */
+.contact-item {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+@media screen and (max-width: 768px) {
+  /* Full width for mobile nav */
+  .navigation-tab-links {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    width: 100%;
+    border: none;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .background-color-darkcyan {
+    padding-left: 20px !important;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+  .navigation-tab-links {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    width: 100%;
+    border: none;
+  }
+}
