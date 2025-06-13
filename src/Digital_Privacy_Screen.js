@@ -68,7 +68,7 @@ function DigitalPrivacyScreen() {
         </div>
         <div>
           <img
-            src={"Phishing-Email--Streamline-Milano.png"}
+            src={"Create Account 3 Streamline Milano.png"}
             alt="security"
             className="image-styling"
             style={{
@@ -123,48 +123,33 @@ function DigitalPrivacyScreen() {
           <InfoPackWithButton
             picture={"Vector (2).png"}
             title={<>Be cautious when sharing personal information online</>}
-            description={
-              <>
-                Think twice when sharing information about yourself, your
-                family, or your friends on the internet; once it is online, you
-                cannot control its spread.
-              </>
-            }
+            description={[
+              "Think twice when sharing information about yourself, your family, or your friends on the internet; once it is online, you cannot control its spread.",
+            ]}
             imageOnTop={isMobile}
           />
           <InfoPackWithButton
             picture={"stash_private-content.png"}
             title={<>Keep your account private</>}
-            description={
-              <>
-                Most social media websites, such as Facebook, Instagram, and
-                TikTok, have settings to keep the content of your account
-                private. It is recommended to keep your page private, so
-                strangers do not have access to your information.
-              </>
-            }
+            description={[
+              "Most social media websites, such as Facebook, Instagram, and TikTok, have settings to keep the content of your account private. It is recommended to keep your page private, sostrangers do not have access to your information.",
+            ]}
             imageOnTop={isMobile}
           />
           <InfoPackWithButton
             picture={"ri_information-off-line.png"}
             title={<>Provide minimal information for new online accounts</>}
-            description={
-              <>
-                For example, you are not required to provide your education,
-                work experience, hometown, etc., to open a new Facebook account.
-              </>
-            }
+            description={[
+              "For example, you are not required to provide your education, work experience, hometown, etc., to open a new Facebook account.",
+            ]}
             imageOnTop={isMobile}
           />
           <InfoPackWithButton
             picture={"ix_hat-man.png"}
             title={<>Do not contact strangers</>}
-            description={
-              <>
-                Do not accept friend or follow requests from those you don't
-                know on social media.
-              </>
-            }
+            description={[
+              "Do not accept friend or follow requests from those you don't know on social media.",
+            ]}
             imageOnTop={isMobile}
           />
           <InfoPackWithButton
@@ -172,13 +157,9 @@ function DigitalPrivacyScreen() {
             title={
               <>Do not allow others to share your photos without your consent</>
             }
-            description={
-              <>
-                This can include photos of yourself or your family. While you
-                control the privacy settings of your account, you cannot do the
-                same for others' accounts.
-              </>
-            }
+            description={[
+              "This can include photos of yourself or your family. While you control the privacy settings of your account, you cannot do the same for others' accounts.",
+            ]}
             imageOnTop={isMobile}
           />
         </div>

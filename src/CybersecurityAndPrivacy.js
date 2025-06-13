@@ -22,7 +22,7 @@ function CyberSecurityAndPrivacy() {
 
   return (
     <>
-      <MobileTopBar />
+      {!isMobile ? <BigScreenTopBar /> : <MobileTopBar />}
       <div
         style={{
           display: "flex",
@@ -44,7 +44,7 @@ function CyberSecurityAndPrivacy() {
               color: "#ff6933",
             }}
           >
-            Cybersecurity &<br />
+            Cyber-Security &<br />
             Privacy
           </h1>
           {isMobile ? (
@@ -83,7 +83,7 @@ function CyberSecurityAndPrivacy() {
         </div>
       </div>
       <div
-        className="learning-center-styling"
+        className="learning-center-styling background-color-verylightpink"
         style={{
           justifyContent: "center",
           paddingTop: "20px",
@@ -91,7 +91,14 @@ function CyberSecurityAndPrivacy() {
         }}
       >
         <h1>Learning Center</h1>
-        <div className="card-row-styling">
+        <div
+          className="card-row-styling-2-2"
+          style={{
+            justifyContent: isMobile && "center",
+            display: isMobile && "flex",
+            flexDirection: isMobile && "column",
+          }}
+        >
           <div onClick={() => navigate("/account-protection-screen")}>
             <Card
               title="Account Protection"
@@ -101,7 +108,7 @@ function CyberSecurityAndPrivacy() {
                   social media and email.
                 </>
               }
-              picture={"mdi_security-lock.png"}
+              picture={"Vector (11).png"}
             />
           </div>
           <div onClick={() => navigate("/device-protection-screen")}>
@@ -124,7 +131,7 @@ function CyberSecurityAndPrivacy() {
               picture={"solar_health-bold.png"}
             />
           </div>
-          <div className={isMobile ? "bottom-cards-mobile" : "bottom-cards"}>
+          <div>
             <div onClick={() => navigate("/blackmail-screen")}>
               <Card
                 title="Blackmail"
@@ -138,20 +145,24 @@ function CyberSecurityAndPrivacy() {
                 picture={"material-symbols_newspaper (1).png"}
               />
             </div>
-            <div onClick={() => navigate("/cyberattacks-screen")}>
-              <div>
-                <Card
-                  title="Cyberattacks"
-                  content={
-                    <>
-                      Learn about cyberattacks and how to
-                      <br />
-                      avoid them.
-                    </>
-                  }
-                  picture={"material-symbols_newspaper (1).png"}
-                />
-              </div>
+          </div>
+          <div
+            onClick={() => navigate("/cyberattacks-screen")}
+            className="last-card"
+          >
+            <div>
+              <Card
+                className={isMobile ? "bottom-cards-mobile" : "bottom-cards"}
+                title="Cyberattacks"
+                content={
+                  <>
+                    Learn about cyberattacks and how to
+                    <br />
+                    avoid them.
+                  </>
+                }
+                picture={"material-symbols_newspaper (1).png"}
+              />
             </div>
           </div>
         </div>
@@ -174,13 +185,7 @@ function CyberSecurityAndPrivacy() {
                 Authentication
               </>
             }
-            content={
-              <>
-                Keep your account safe with
-                <br />
-                an extra security step.
-              </>
-            }
+            content={<>Keep your account safe with an extra security step.</>}
           />
           <div onClick={() => navigate("/creating_strong_password_screen")}>
             <PinkCard

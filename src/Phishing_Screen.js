@@ -337,11 +337,9 @@ function PhishingScreen() {
           }
           title={<>Facts About Phishing</>}
           content={
-            <>
-              Legitimate organizations will never ask for sensitive information
-              via email. When in doubt, contact the organization directly using
-              their official contact information.
-            </>
+            [
+              "Legitimate organizations will never ask for sensitive information via email. When in doubt, contact the organization directly using their official contact information."
+            ]
           }
         />
       </div>

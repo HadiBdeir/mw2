@@ -1,8 +1,11 @@
 // import "./App.css";
 import "./TopBarCss.css";
 import React, { useState, useEffect, Children } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card({ title, content, picture, backgroundColor, style = {} }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   return (
     <div
       style={{
@@ -10,8 +13,8 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
         border: "1px solid lightgray",
         borderBottomLeftRadius: "10px",
         borderBottomRightRadius: "10px",
-        padding: "20px",
-        paddingTop: "33px", // Add extra top padding for the blue bar
+        padding: "40px",
+        paddingTop: "33px",
         margin: "10px",
         boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.2)",
         cursor: "pointer",
@@ -19,7 +22,8 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
         textAlign: "center",
         maxWidth: "500px",
         backgroundColor: backgroundColor || "white",
-        position: "relative", // Important for absolute positioning
+        position: "relative",
+        height: isMobile ? undefined : "200px",
         ...style,
       }}
       onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
@@ -33,22 +37,26 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
           left: "0",
           height: "7px",
           width: "100%",
-          backgroundColor: "#008B8B"
-       }}
+          backgroundColor: "#008B8B",
+        }}
       />
 
       {picture ? (
         <img
-          src={process.env.PUBLIC_URL + picture}
+          src={picture}
           style={{
             maxHeight: "100px",
             maxWidth: "100px",
           }}
         />
       ) : (
-        <div style={{ fontSize: "100px", textAlign: "center" }}>😺</div>
+        <>
+          <div style={{ fontSize: "100px", textAlign: "center" }}>😺</div>
+        </>
       )}
-      <h3>{title}</h3>
+      <h3 style={{ textDecoration: "underline", fontWeight: "bold" }}>
+        {title}
+      </h3>
       <p>{content}</p>
     </div>
   );
@@ -66,11 +74,9 @@ function MiniCard({ title, link }) {
           padding: "15px 30px",
           border: "2px solid lightgray",
           border: "none",
-          
         }}
       >
-        <a href={link} style={{ color: "#FFFFF0", fontWeight: "lighter", 
-         }}>
+        <a href={link} style={{ color: "#FFFFF0", fontWeight: "lighter" }}>
           {title}
         </a>
       </button>
@@ -79,13 +85,13 @@ function MiniCard({ title, link }) {
 }
 
 function PinkCard({ title, content, link }) {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
-    useEffect(() => {
-      const handleResize = () => setIsMobile(window.innerWidth < 768);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <a
       href={link}
@@ -106,13 +112,31 @@ function PinkCard({ title, content, link }) {
           boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.3)",
           cursor: "pointer",
           transition: "transform 0.2s ease-in-out",
-          minHeight: "150px",
+          minHeight: isMobile ? "175px" : "150px",
+          margin: isMobile ? "20px" : undefined,
         }}
         onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
         onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
-        <h3 style={{ color: "#FF5E00", fontSize: isMobile ? undefined : "22px" }}>{title}</h3>
-        <p style={{ fontWeight: "normal", color: "black", maxWidth: isMobile ? undefined : "180px" }}>{content}</p>
+        <h3
+          style={{
+            color: "#FF5E00",
+            fontSize: isMobile ? undefined : "22px",
+            textAlign: "left",
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          style={{
+            fontWeight: "normal",
+            color: "black",
+            maxWidth: isMobile ? undefined : "180px",
+            textAlign: "left",
+          }}
+        >
+          {content}
+        </p>
       </div>
     </a>
   );
@@ -120,9 +144,31 @@ function PinkCard({ title, content, link }) {
 
 function MobileTopBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const scrollToDigitalJourneys = () => {
+    // Check if we're on the home page
+    if (window.location.pathname !== "/") {
+      // Navigate to home page first, then scroll after navigation
+      navigate("/");
+      // Use setTimeout to wait for navigation to complete
+      setTimeout(() => {
+        const element = document.getElementById("digital-journeys-section");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // We're already on home page, just scroll
+      const element = document.getElementById("digital-journeys-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -148,7 +194,12 @@ function MobileTopBar() {
             >
               <h2
                 className="muwatana-title-styling"
-                style={{ marginTop: "5px" }}
+                style={{
+                  marginTop: "5px",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={() => navigate("/")}
               >
                 muwatana
               </h2>
@@ -164,96 +215,86 @@ function MobileTopBar() {
 
             {/* Desktop navigation */}
             <div className="navigation-tab-links desktop-nav">
-              <p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Main_Page"
+              <div onClick={() => navigate("/")}>
+                <p
+                  style={{
+                    margin: "10px",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
                   className="nav-link"
-                  style={{ margin: "10px", fontWeight: "bold" }}
                 >
                   Home
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Main_Page"
-                  className="nav-link"
-                  style={{ margin: "10px", fontWeight: "bold" }}
+                </p>
+              </div>
+              <div onClick={() => navigate("/about-us")}>
+                <p
+                  style={{
+                    margin: "10px",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
                 >
                   About
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Main_Page"
-                  className="nav-link"
-                  style={{ margin: "10px", fontWeight: "bold" }}
+                </p>
+              </div>
+              <div onClick={() => navigate("/coming-soon-screen")}>
+                <p
+                  style={{
+                    margin: "10px",
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
                 >
                   Learning Center
-                </a>
+                </p>
+              </div>
+              <p
+                onClick={scrollToDigitalJourneys}
+                className="nav-link"
+                style={{
+                  margin: "10px",
+                  whiteSpace: "nowrap",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Digital Journeys
               </p>
-              <p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Main_Page"
-                  className="nav-link"
+              <a
+                onClick={() => navigate("/digital-citizenship")}
+                className="nav-link"
+                style={{
+                  margin: "10px",
+                  whiteSpace: "nowrap",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Digital Citizenship
+                <br />
+                Principles
+              </a>
+              <a
+                href="https://en.wikipedia.org/wiki/Main_Page"
+                className="nav-link"
+              >
+                <button
                   style={{
+                    color: "white",
+                    backgroundColor: "darkOrange",
+                    borderRadius: "20px",
+                    padding: "1px 20px",
+                    height: "30px",
+                    fontWeight: "bold",
                     margin: "10px",
                     whiteSpace: "nowrap",
-                    fontWeight: "bold",
+                    border: "none",
                   }}
                 >
-                  Digital Journeys
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Main_Page"
-                  className="nav-link"
-                  style={{
-                    margin: "10px",
-                    whiteSpace: "nowrap",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Digital Citizenship
-                  <br />
-                  Principles
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://en.wikipedia.org/wiki/Main_Page"
-                  className="nav-link"
-                >
-                  <button
-                    style={{
-                      color: "white",
-                      backgroundColor: "darkOrange",
-                      borderRadius: "20px",
-                      padding: "1px 20px",
-                      height: "30px",
-                      fontWeight: "lighter",
-                      margin: "10px",
-                      whiteSpace: "nowrap",
-                      border: "none",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Contact ISF
-                  </button>
-                </a>
-              </p>
-              <p>
-                <input
-                  placeholder="search this site...      🔍"
-                  style={{
-                    marginRight: "20px",
-                    height: "40px",
-                    borderRadius: "5px",
-                    border: "1px solid gray",
-                    padding: "5px",
-                  }}
-                />
-              </p>
+                  Contact ISF
+                </button>
+              </a>
               <span
                 style={{
                   margin: "20px",
@@ -270,42 +311,55 @@ function MobileTopBar() {
           {menuOpen && (
             <div className="mobile-nav">
               <ul className="mobile-nav-links">
-                <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                <li className="mobile-nav-item" onClick={() => navigate("/")}>
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     Home
-                  </a>
+                  </p>
                 </li>
                 <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                  <div
+                    onClick={() => navigate("/about-us")}
+                    style={{
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                    }}
                   >
                     About
-                  </a>
+                  </div>
+                </li>
+                <li
+                  className="mobile-nav-item"
+                  onClick={() => navigate("/coming-soon-screen")}
+                  style={{
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
+                >
+                  Learning Center
                 </li>
                 <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
-                  >
-                    Learning Center
-                  </a>
-                </li>
-                <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                  <p
+                    onClick={scrollToDigitalJourneys}
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     Digital Journeys
-                  </a>
+                  </p>
                 </li>
                 <li className="mobile-nav-item">
                   <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                    onClick={() => navigate("/digital-citizenship")}
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     Digital Citizenship
                     <br />
@@ -329,14 +383,6 @@ function MobileTopBar() {
                   </a>
                 </li>
               </ul>
-
-              {/* Mobile search bar - now placed inside and at the bottom of the mobile nav menu */}
-              <div className="mobile-search-container">
-                <input
-                  placeholder="search this site...      🔍"
-                  className="mobile-search-input"
-                />
-              </div>
             </div>
           )}
         </div>
@@ -347,9 +393,31 @@ function MobileTopBar() {
 
 function BigScreenTopBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const scrollToDigitalJourneys = () => {
+    // Check if we're on the home page
+    if (window.location.pathname !== "/") {
+      // Navigate to home page first, then scroll after navigation
+      navigate("/");
+      // Use setTimeout to wait for navigation to complete
+      setTimeout(() => {
+        const element = document.getElementById("digital-journeys-section");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // We're already on home page, just scroll
+      const element = document.getElementById("digital-journeys-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -377,7 +445,12 @@ function BigScreenTopBar() {
             >
               <h2
                 className="muwatana-title-styling"
-                style={{ marginTop: "5px" }}
+                style={{
+                  marginTop: "5px",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={() => navigate("/")}
               >
                 muwatana
               </h2>
@@ -388,17 +461,6 @@ function BigScreenTopBar() {
 
             {/* Desktop navigation - search, contact, arabic on the right */}
             <div className="desktop-nav-right">
-              <input
-                placeholder="search this site...      🔍"
-                style={{
-                  height: "30px",
-                  borderRadius: "5px",
-                  border: "1px solid gray",
-                  padding: "5px",
-                  paddingLeft: "20px",
-                  marginRight: "20px",
-                }}
-              />
               <a href="https://en.wikipedia.org/wiki/Main_Page">
                 <button
                   style={{
@@ -437,42 +499,55 @@ function BigScreenTopBar() {
           {menuOpen && (
             <div className="mobile-nav">
               <ul className="mobile-nav-links">
-                <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                <li className="mobile-nav-item" onClick={() => navigate("/")}>
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     Home
-                  </a>
+                  </p>
                 </li>
                 <li className="mobile-nav-item">
                   <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                    onClick={() => navigate("/about-us")}
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     About
                   </a>
                 </li>
-                <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
-                  >
-                    Learning Center
-                  </a>
+                <li
+                  className="mobile-nav-item"
+                  onClick={() => navigate("/coming-soon-screen")}
+                  style={{
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                  }}
+                >
+                  Learning Center
                 </li>
                 <li className="mobile-nav-item">
-                  <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                  <p
+                    onClick={scrollToDigitalJourneys}
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     Digital Journeys
-                  </a>
+                  </p>
                 </li>
                 <li className="mobile-nav-item">
                   <a
-                    href="https://en.wikipedia.org/wiki/Main_Page"
-                    style={{ fontWeight: "bold" }}
+                    onClick={() => navigate("/digital-citizenship")}
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
                   >
                     Digital Citizenship Principles
                   </a>
@@ -494,14 +569,6 @@ function BigScreenTopBar() {
                   </a>
                 </li>
               </ul>
-
-              {/* Mobile search bar */}
-              <div className="mobile-search-container">
-                <input
-                  placeholder="search this site...      🔍"
-                  className="mobile-search-input"
-                />
-              </div>
             </div>
           )}
         </div>
@@ -520,38 +587,60 @@ function BigScreenTopBar() {
               className="nav-items-row desktop-only"
               style={{ justifyContent: "flex-end", display: "flex" }}
             >
+              <div onClick={() => navigate("/")}>
+                <p
+                  className="nav-item-link-header"
+                  style={{
+                    color: "black",
+                    fontWeight: "500",
+                    cursor: "pointer",
+                  }}
+                >
+                  Home
+                </p>
+              </div>
               <a
-                href="https://en.wikipedia.org/wiki/Main_Page"
+                onClick={() => navigate("/resources-cybersecurity")}
                 className="nav-item-link-header"
-                style={{ color: "black", fontWeight: "500" }}
-              >
-                Home
-              </a>
-              <a
-                href="https://en.wikipedia.org/wiki/Main_Page"
-                className="nav-item-link-header"
-                style={{ color: "black", fontWeight: "500" }}
+                style={{
+                  color: "black",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                }}
               >
                 About
               </a>
-              <a
-                href="https://en.wikipedia.org/wiki/Main_Page"
+              <div onClick={() => navigate("/coming-soon-screen")}>
+                <p
+                  className="nav-item-link-header"
+                  style={{
+                    color: "black",
+                    fontWeight: "500",
+                    cursor: "pointer",
+                  }}
+                >
+                  Learning Center
+                </p>
+              </div>
+              <p
+                onClick={scrollToDigitalJourneys}
                 className="nav-item-link-header"
-                style={{ color: "black", fontWeight: "500" }}
-              >
-                Learning Center
-              </a>
-              <a
-                href="https://en.wikipedia.org/wiki/Main_Page"
-                className="nav-item-link-header"
-                style={{ color: "black", fontWeight: "500" }}
+                style={{
+                  color: "black",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                }}
               >
                 Digital Journeys
-              </a>
+              </p>
               <a
-                href="https://en.wikipedia.org/wiki/Main_Page"
+                onClick={() => navigate("/digital-citizenship")}
                 className="nav-item-link-header"
-                style={{ color: "black", fontWeight: "500" }}
+                style={{
+                  color: "black",
+                  fontWeight: "500",
+                  cursor: "pointer",
+                }}
               >
                 Digital Citizenship Principles
               </a>
@@ -564,55 +653,123 @@ function BigScreenTopBar() {
 }
 
 function BottomBar() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   return (
     <div
       className="background-color-darkcyan"
       style={{
         display: "flex",
+        flexDirection: isMobile ? "column" : "row",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: isMobile ? "flex-start" : "center",
         padding: "20px",
       }}
     >
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
+          justifyContent: "space-between",
           alignItems: "flex-start",
-          textAlign: "left",
-          width: "80px",
+          width: "100%",
+          marginBottom: isMobile ? "20px" : "0px",
         }}
       >
-        <a
-          href="https://en.wikipedia.org/wiki/Main_Page"
-          style={{ color: "white", textDecoration: "none" }}
-        >
-          <small>Contact us</small>
-        </a>
-        <a
-          href="https://en.wikipedia.org/wiki/Main_Page"
-          style={{ color: "white", textDecoration: "none" }}
-        >
-          <small>Help</small>
-        </a>
-      </div>
-      <a href="https://en.wikipedia.org/wiki/Main_Page" className="nav-link">
-        <button
+        <div
           style={{
-            color: "white",
-            backgroundColor: "#FF5E00",
-            borderRadius: "5px",
-            height: "50px",
-            fontWeight: "normal",
-            margin: "10px",
-            whiteSpace: "nowrap",
-            border: "none",
-            padding: "0px 30px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            textAlign: "left",
+            width: "80px",
           }}
         >
-          Report incidents to ISF
-        </button>
-      </a>
+          <a
+            href="https://en.wikipedia.org/wiki/Main_Page"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <small>Contact us</small>
+          </a>
+          <a
+            href="https://en.wikipedia.org/wiki/Main_Page"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <small>Help</small>
+          </a>
+          {isMobile ? (
+            <p style={{ color: "white", textDecoration: "none" }}>
+              <small>
+                <>
+                  Icons &<br />
+                  illustrations by{" "}
+                </>
+                <a
+                  style={{ color: "inherit", textDecoration: "underline" }}
+                  href="https://en.wikipedia.org/wiki/Main_Page"
+                >
+                  https://streamlinehq.com
+                </a>
+              </small>
+            </p>
+          ) : (
+            <p style={{ color: "white", textDecoration: "none" }}>
+              <small>
+                Icons & illustrations by{" "}
+                <a
+                  style={{ color: "inherit", textDecoration: "underline" }}
+                  href="https://streamlinehq.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://streamlinehq.com
+                </a>
+              </small>
+            </p>
+          )}
+        </div>
+
+        {isMobile && (
+          <a
+            href="https://en.wikipedia.org/wiki/Main_Page"
+            className="nav-link"
+          >
+            <button
+              style={{
+                color: "white",
+                backgroundColor: "#FF5E00",
+                borderRadius: "5px",
+                height: "50px",
+                fontWeight: "normal",
+                whiteSpace: "nowrap",
+                border: "none",
+                padding: "0px 30px",
+              }}
+            >
+              Report incidents to Lebanese ISF
+            </button>
+          </a>
+        )}
+      </div>
+
+      {!isMobile && (
+        <a href="https://en.wikipedia.org/wiki/Main_Page" className="nav-link">
+          <button
+            style={{
+              color: "white",
+              backgroundColor: "#FF5E00",
+              borderRadius: "5px",
+              height: "50px",
+              fontWeight: "normal",
+              margin: "10px",
+              whiteSpace: "nowrap",
+              border: "none",
+              padding: "0px 30px",
+            }}
+          >
+            Report incidents to Lebanese ISF
+          </button>
+        </a>
+      )}
     </div>
   );
 }
@@ -626,23 +783,30 @@ const InfoPackWithButton = ({ picture, alt, title, description = [] }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const ifDescription = description && description.length > 0;
+  const isList = Array.isArray(description) && description.length > 1;
   return (
     <div
       style={{
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
-        alignItems: isMobile ? "center" : "flex-start",
+        alignItems: isMobile
+          ? "center"
+          : ifDescription
+          ? "flex-start"
+          : "center", // teach this too
         gap: isMobile ? "20px" : "10px",
         textAlign: isMobile ? "center" : "left",
         width: isMobile ? "300px" : "823px",
         backgroundColor: "white",
-        height: isMobile ? undefined : "170px", 
+        height: "auto",
         padding: isMobile ? "40px 20px" : "15px 20px",
         margin: "10px auto",
         borderBottomRightRadius: "20px",
         borderTopRightRadius: "20px",
         borderLeft: "7px solid #008B8B",
         boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+        margin: "30px auto",
       }}
     >
       <div
@@ -686,7 +850,7 @@ const InfoPackWithButton = ({ picture, alt, title, description = [] }) => {
       >
         <h2
           style={{
-            fontSize: isMobile ? "24px" : "32px",
+            fontSize: isMobile ? "24px" : ifDescription ? "32px" : "24    px",
             marginBottom: isMobile ? "15px" : "10px",
             lineHeight: "1.2",
             marginTop: 0,
@@ -697,8 +861,51 @@ const InfoPackWithButton = ({ picture, alt, title, description = [] }) => {
         >
           {title}
         </h2>
+        {ifDescription ? (
+          isList ? (
+            <ul
+              style={{
+                fontSize: "20px",
+                paddingLeft: "20px",
+                margin: 0,
+                marginLeft: "10px",
+              }}
+            >
+              {description.map((item, index) => (
+                <li key={index} style={{ marginBottom: "8px" }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p
+              style={{
+                fontSize: "20px",
+                marginLeft: "10px",
+                marginBottom: "8px",
+                paddingLeft: "0",
+              }}
+            >
+              {description[0]}
+            </p>
+          )
+        ) : null}
 
-        <p style={{fontSize: "20px"}}>{description}</p>
+        {/* <ul
+          style={{
+            fontSize: "20px",
+            paddingLeft: "20px",
+            margin: 0,
+            marginLeft: "10px",
+            list
+          }}
+        >
+          {description.map((item, index) => (
+            <li key={index} style={{ marginBottom: "8px" }}>
+              {item}
+            </li>
+          ))}
+        </ul> */}
       </div>
     </div>
   );
@@ -741,8 +948,9 @@ function SmallButton({ text }) {
   );
 }
 
-const ExploreCard = ({ title, text, examples }) => {
+const ExploreCard = ({ title, text, examples, link }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -753,7 +961,7 @@ const ExploreCard = ({ title, text, examples }) => {
   if (isMobile) {
     return (
       <div
-        className="explore-card-styling-mobile"
+        className="mobile-explore-card-styling"
         onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
         onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
       >
@@ -767,12 +975,15 @@ const ExploreCard = ({ title, text, examples }) => {
         </div>
         <div className="mobile-card-text">{text}</div>
         <div className="mobile-orange-button-container">
-          <a
-            href="https://en.wikipedia.org/wiki/Main_Page"
-            className="nav-link"
+          <button
+            className="mobile-cyan-button"
+            onClick={() => {
+              navigate(link);
+              window.scrollTo(0, 0);
+            }}
           >
-            <button className="mobile-cyan-button">Explore</button>
-          </a>
+            Read
+          </button>
         </div>
       </div>
     );
@@ -795,10 +1006,16 @@ const ExploreCard = ({ title, text, examples }) => {
       <div className="card-text" style={{ padding: "10px" }}>
         {text}
       </div>
-      <div className="orange-button-container">
-        <a href="https://en.wikipedia.org/wiki/Main_Page" className="nav-link">
-          <button className="cyan-button">Explore</button>
-        </a>
+      <div className="mobile-orange-button-container">
+        <button
+          className="cyan-button"
+          onClick={() => {
+            navigate(link);
+            window.scrollTo(0, 0);
+          }}
+        >
+          Read
+        </button>
       </div>
     </div>
   );
@@ -994,12 +1211,10 @@ function Facts({ title, content, source, style = {} }) {
   );
 }
 
-function  DigitalPrivacyHeader() {
+function DigitalPrivacyHeader() {
   return (
     <div className="header-container">
-      <h1 className="header-title">
-        The dangers of poor digital privacy
-      </h1>
+      <h1 className="header-title">The dangers of poor digital privacy</h1>
     </div>
   );
 }
@@ -1014,59 +1229,64 @@ function DigitalPrivacyHeaderContent() {
   }, []);
 
   return (
-    <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: isMobile ? "20px" : "100px",
-      maxWidth: "1200px",
-      margin: "0 auto",
-      paddingBottom: "40px",
-      flexDirection: isMobile ? "column" : "row",
-      padding: isMobile ? "0 20px 40px 20px" : "0 0 40px 0"
-    }}>
-      <div style={{
-        flex: "0 0 auto"
-      }}>
-        <img 
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: isMobile ? "20px" : "100px",
+        maxWidth: "1200px",
+        margin: "0 auto",
+        paddingBottom: "40px",
+        flexDirection: isMobile ? "column" : "row",
+        padding: isMobile ? "0 20px 40px 20px" : "0 0 40px 0",
+      }}
+    >
+      <div
+        style={{
+          flex: "0 0 auto",
+        }}
+      >
+        <img
           src="DigitalPrivacyPersonIcon.png"
           alt="Digital Privacy Illustration"
           style={{
             width: isMobile ? "250px" : "400px",
-            height: "auto"
+            height: "auto",
           }}
         />
       </div>
-      <div style={{
-        maxWidth: isMobile ? "100%" : "500px",
-        flex: "1"
-      }}>
-        <p style={{
-          fontSize: isMobile ? "18px" : "20px",
-          lineHeight: "1.6",
-          color: "#333",
-          textAlign: isMobile ? "center" : "left"
-        }}>
-          Poor digital privacy could lead to consequences that affect you, your family, and your friends. Some of these consequences could be:
+      <div
+        style={{
+          maxWidth: isMobile ? "100%" : "500px",
+          flex: "1",
+        }}
+      >
+        <p
+          style={{
+            fontSize: isMobile ? "18px" : "20px",
+            lineHeight: "1.6",
+            color: "#333",
+            textAlign: isMobile ? "center" : "left",
+          }}
+        >
+          Poor digital privacy could lead to consequences that affect you, your
+          family, and your friends. Some of these consequences could be:
         </p>
-        <ul style={{
-          fontSize: isMobile ? "18px" : "20px",
-          lineHeight: "1.4",
-          color: "#333",
-          listStylePosition: "outside",
-          margin: isMobile ? "0 auto" : undefined,
-          display: "table",
-          paddingRight: isMobile ? "20px" : undefined,
-        }}>
-          <li style={{ marginBottom: "12px" }}>
-            Cyberattacks
-          </li>
-          <li style={{ marginBottom: "12px" }}>
-            Blackmail
-          </li>
-          <li style={{ marginBottom: "12px" }}>
-            Cyberstalking
-          </li>
+        <ul
+          style={{
+            fontSize: isMobile ? "18px" : "20px",
+            lineHeight: "1.4",
+            color: "#333",
+            listStylePosition: "outside",
+            margin: isMobile ? "0 auto" : undefined,
+            display: "table",
+            paddingRight: isMobile ? "20px" : undefined,
+          }}
+        >
+          <li style={{ marginBottom: "12px" }}>Cyberattacks</li>
+          <li style={{ marginBottom: "12px" }}>Blackmail</li>
+          <li style={{ marginBottom: "12px" }}>Cyberstalking</li>
         </ul>
       </div>
     </div>
@@ -1096,25 +1316,25 @@ function Remember({ title, content, source }) {
     >
       <div
         style={{
-          display: 'flex',
-          backgroundColor: '#ffdbb7',
-          borderRadius: '6px',
-          paddingTop: '15px',
+          display: "flex",
+          backgroundColor: "#ffdbb7",
+          borderRadius: "6px",
+          paddingTop: "15px",
           paddingLeft: "13px",
           paddingRight: "13px",
-          borderLeft: '16px solid #ff6d3a',
-          boxSizing: "border-box"
+          borderLeft: "16px solid #ff6d3a",
+          boxSizing: "border-box",
         }}
       >
         <div style={{ flex: 1, width: "100%" }}>
           <h3
             style={{
-              color: '#ff6d3a',
+              color: "#ff6d3a",
               marginTop: "10px",
-              marginBottom: '5px',
-              fontSize: 'clamp(20px, 5vw, 30px)',
+              marginBottom: "5px",
+              fontSize: "clamp(20px, 5vw, 30px)",
               wordWrap: "break-word",
-              hyphens: "auto"
+              hyphens: "auto",
             }}
           >
             {title}
@@ -1128,15 +1348,17 @@ function Remember({ title, content, source }) {
               marginLeft: "0",
             }}
           />
-          <ul style={{ 
-            margin: 0, 
-            paddingLeft: '20px',
-            paddingRight: '10px',
-            paddingBottom: "25px", 
-            fontSize: "clamp(14px, 4vw, 18px)",
-            maxWidth: "85%",
-            wordWrap: "break-word",
-          }}>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: "20px",
+              paddingRight: "10px",
+              paddingBottom: "25px",
+              fontSize: "clamp(14px, 4vw, 18px)",
+              maxWidth: "85%",
+              wordWrap: "break-word",
+            }}
+          >
             {content.map((contentItem, index) => (
               <li key={index} style={{ marginBottom: "8px" }}>
                 {contentItem}
@@ -1251,12 +1473,22 @@ const ReportButton = () => {
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
     width: isMobile ? "90vw" : "auto",
     maxWidth: "100%",
+    transition: "transform 0.2s ease-in-out",
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <a href="https://en.wikipedia.org/wiki/Main_Page" className="nav-link">
-        <button style={buttonStyle}>
+        <button
+          style={buttonStyle}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        >
           Report incidents to the Lebanese Internal Security Forces
           <br />
           <span style={{ fontFamily: "'Amiri', serif" }}>
@@ -1269,7 +1501,6 @@ const ReportButton = () => {
     </div>
   );
 };
-
 
 const PropertiesOfAStrongPassword = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);

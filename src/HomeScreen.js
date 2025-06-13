@@ -50,7 +50,8 @@ function HomeScreen() {
         </div>
         <div>
           <img
-            src={process.env.PUBLIC_URL + '/twopeoplestarringateachother.png'}             alt="Apple"
+            src={process.env.PUBLIC_URL + "/twopeoplestarringateachother.png"}
+            alt="Apple"
             className="image-styling"
             style={{
               maxWidth: isMobile ? "80%" : "400px",
@@ -85,11 +86,11 @@ function HomeScreen() {
                   threats.
                 </>
               }
-              picture={"/cybersecurityandprivacyimage.png"}
+              picture={process.env.PUBLIC_URL + "/Vector (15).png"}
               backgroundColor="white"
             />
           </div>
-          <div onClick={() => navigate("")}>
+          <div onClick={() => navigate("/coming-soon-screen")}>
             <Card
               title="Parenting in the Digital Age"
               content={
@@ -103,13 +104,11 @@ function HomeScreen() {
                   the digital age.
                 </>
               }
-              picture={
-                "/Escalator-Warning--Streamline-Outlined-Material-Symbols.png"
-              }
+              picture={process.env.PUBLIC_URL + "/Component (1).png"}
               backgroundColor="white"
             />
           </div>
-          <div onClick={() => navigate("")}>
+          <div onClick={() => navigate("/coming-soon-screen")}>
             <Card
               title="Digital Health"
               content={
@@ -119,11 +118,11 @@ function HomeScreen() {
                   technology use.
                 </>
               }
-              picture={"/Wishlist-Love-Add-Favorite--Streamline-Sharp.png"}
+              picture={process.env.PUBLIC_URL + "/Vector (13).png"}
               backgroundColor="white"
             />
           </div>
-          <div onClick={() => navigate("")}>
+          <div onClick={() => navigate("/coming-soon-screen")}>
             <Card
               title="Media Literacy"
               content={
@@ -137,14 +136,16 @@ function HomeScreen() {
                   the digital age.
                 </>
               }
-              picture={"/Newspaper--Streamline-Outlined-Material-Symbols.png"}
+              picture={process.env.PUBLIC_URL + "/Vector (14).png"}
               backgroundColor="white"
             />
           </div>
         </div>
       </div>
 
-      <div className="learning-center-styling"
+      <div
+        id="digital-journeys-section"
+        className="learning-center-styling"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -156,11 +157,11 @@ function HomeScreen() {
       >
         <h2>Digital Journeys</h2>
         <p>
-          Discuss and reflect on digital journeys with your spouse, children, and
-          students.
+          Discuss and reflect on digital journeys with your spouse, children,
+          and students.
         </p>
         <MiniCard
-          title="Discover Digital Journeys"
+          title="Read Digital Journeys"
           link={"https://www.wikipedia.org/"}
         />
       </div>
@@ -205,13 +206,7 @@ function HomeScreen() {
                 Setting up 2-Factor <br /> Authentication
               </>
             }
-            content={
-              <>
-                Keep your account safe with
-                <br />
-                an extra security step
-              </>
-            }
+            content={<>Keep your account safe with an extra security step</>}
           />
           <PinkCard
             title={
@@ -230,13 +225,18 @@ function HomeScreen() {
             }
           />
           <PinkCard
-
             title={<>Cyberattacks</>}
             content={
               <>
-                <br /> What is a cyberattack and
+                {/* <br /> What is a cyberattack and
                 <br />
-                how can you avoid them?
+                how can you avoid them? */}
+                <br />
+                What is a cyberattack
+                <br />
+                and how can you
+                <br />
+                avoid them.
               </>
             }
           />

@@ -7,6 +7,7 @@ import Card, {
   ReportButton,
   ExploreCardsLayout,
   BigScreenTopBar,
+  InfoPackWithButton,
 } from "./Components.js";
 import "./App.css";
 import React from "react";
@@ -22,6 +23,17 @@ function BlackmailScreen() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const headerStyle = {
+    fontSize: isMobile ? "32px" : "64px",
+    fontWeight: "700",
+    color: "#000000",
+    marginBottom: isMobile ? "40px" : "50px",
+    paddingTop: isMobile ? "20px" : "120px",
+    paddingLeft: isMobile ? "20px" : "30px",
+    paddingRight: isMobile ? "20px" : "30px",
+    textAlign: "center",
+  };
 
   return (
     <>
@@ -91,14 +103,78 @@ function BlackmailScreen() {
           />
         </div>
       </div>
-      <div>
-        <BlackmailHelp />
+      <div
+        className="background-color-verylightpink"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "20px",
+        }}
+      >
+        <div
+          style={{
+            justifyContent: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: isMobile ? "32px" : "45px",
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
+            If you are a Victim of Blackmail
+          </h1>
+          <InfoPackWithButton
+            picture={"Vector (2).png"}
+            title="If you are a child, teenager, or young adult, reach out to an adult you trust such as your parents or teachers."
+            imageOnTop={isMobile}
+          />
+          <InfoPackWithButton
+            picture={"stash_private-content.png"}
+            title={"Do not give the blackmailer what they are asking for."}
+            imageOnTop={isMobile}
+          />
+          <InfoPackWithButton
+            picture={"ri_information-off-line.png"}
+            title={"Do not delete any messages sent to you by the attacker: they will be used for evidence."}
+            imageOnTop={isMobile}
+          />
+          <InfoPackWithButton
+            picture={"ix_hat-man.png"}
+            title={"Do not tell or hint to the attacker that you will be informing the authorities."}
+            imageOnTop={isMobile}
+          />
+          <InfoPackWithButton
+            picture={"material-symbols_no-photography-outline.png"}
+            title={"Report any accounts or posts that share your private information."}
+            imageOnTop={isMobile}
+          />
+        </div>
       </div>
       <ReportButton />
-      <h1 style={{ textAlign: "center" }}>Related Digital Journeys</h1>
+      <div
+        style={{
+          paddingTop: isMobile ? "80px" : "20px",
+          marginBottom: isMobile ? "50px" : "100px",
+        }}
+      >
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: isMobile ? "36px" : "64px",
+          }}
+        >
+          Related Case Studies
+        </h1>
+      </div>
       <div
         className="pinkcard-row-styling"
-        style={{ gap: "20px", margin: "50px" }}
+        style={{ gap: "60px", margin: "0 auto" }}
       >
         <ExploreCard
           title="Social Media and Online Identity"
@@ -106,6 +182,7 @@ function BlackmailScreen() {
           examples={["Digital Privacy", "Social Media", "Ages 10+"]}
         />
         <ExploreCard
+          link="/resources-cybersecurity"
           title="Cybersecurity"
           text="George and Hadi are enjoying their time in school with their new friend John. However, is everyone accepting of the new student in the WhatsApp group chat? And how will George and Hadi react?"
           examples={[
@@ -132,44 +209,47 @@ function BlackmailScreen() {
         <h1
           style={{
             textAlign: "center",
-            fontSize: isMobile ? undefined : "50px",
-            paddingBottom: isMobile ? undefined : "40px",
+            fontSize: isMobile ? "36px" : "64px",
+            paddingTop: isMobile ? "80px" : undefined,
+            paddingBottom: isMobile ? "50px" : "40px",
           }}
         >
           Related Topics
         </h1>
-        <div className="pinkcard-row-styling">
-          <PinkCard
-            title={
-              <>
-                Setting up 2-Factor
-                <br />
-                Authentication
-              </>
-            }
-            content={
-              <>
-                Keep your account safe with
-                <br />
-                an extra security step.
-              </>
-            }
-          />
-          <div onClick={() => navigate("/creating_strong_password_screen")}>
+        <div>
+          <div className="pinkcard-row-styling">
             <PinkCard
               title={
                 <>
-                  Creating a <br />
-                  password
+                  Setting up 2-Factor
+                  <br />
+                  Authentication
                 </>
               }
               content={
                 <>
-                  Learn how to create a<br />
-                  strong, safe password.
+                  Keep your account safe with
+                  <br />
+                  an extra security step.
                 </>
               }
             />
+            <div onClick={() => navigate("/creating_strong_password_screen")}>
+              <PinkCard
+                title={
+                  <>
+                    Creating a <br />
+                    password
+                  </>
+                }
+                content={
+                  <>
+                    Learn how to create a<br />
+                    strong, safe password.
+                  </>
+                }
+              />
+            </div>
           </div>
         </div>
       </div>

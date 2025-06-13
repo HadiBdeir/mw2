@@ -101,20 +101,66 @@ function DeviceProtectionScreen() {
             paddingTop: "10px",
           }}
         >
-          <h1 style={{ fontSize: "45px", textAlign: "left", width: "100%" }}>
+          <h1 style={{ fontSize: "45px", textAlign: "center", width: "100%" }}>
             To keep your device safe
           </h1>
-          <div style={{ paddingLeft: "30px" }}>
+          <div style={{  }}>
             <InfoPackWithButton
+              picture={"Vector (5).png"}
               title={"Limit access to your device"}
               description={[
                 "Set a strong password to protect your device and set Autolock on your phone and computer.",
                 "Perform a factory reset on your device before you give it away or sell it.",
               ]}
             />
+            <InfoPackWithButton
+              picture={"Vector (6).png"}
+              title={"Download Apps from trusted sources"}
+              description={[
+                "Only download applications from trusted sources such as the App Store, Google Play Store, and official software websites.",
+              ]}
+            />
+            <InfoPackWithButton
+              picture={"Vector (7).png"}
+              title={"Install Antivirus and keep your device updated"}
+              description={[
+                "Download Antivirus software to protect your device from viruses and keep it updated.",
+                "Always update your Operating system (Windows, Android, MacOS, iOS) and enable Automatic Updates.",
+              ]}
+            />
+            <InfoPackWithButton
+              picture={"Vector (8).png"}
+              title={"Avoid suspicious links and download requests"}
+              description={[
+                "Do not click on ads or popups because it could download malware on your device without your knowledge.",
+                "Beware of emails and text messages with links attached to avoid phishing attacks.",
+                "Do not download content from emails sent to you by strangers.",
+              ]}
+            />
+            <InfoPackWithButton
+              picture={"Vector (9).png"}
+              title={"Keep your connections secure"}
+              description={[
+                "Avoid connecting to public WiFi. If necessary, once you are done forget the network.",
+                "Enable the Firewall feature on your computer.",
+                "Turn off Bluetooth when it is not in use.",
+              ]}
+            />
+            <InfoPackWithButton
+              picture={"Vector (10).png"}
+              title={"Keep your devices physically secure"}
+              description={[
+                "Do not plug in a USB that you do not know the source of.",
+                "Cover the camera of your devices when not in use to protect yourself from having your picture or video taken without your knowledge.",
+                "Enable the Find my Phone feature on your mobile device so you can find it in case it gets lost.",
+              ]}
+            />
           </div>
         </div>
       </div>
+      <h1 style={{ fontWeight: "bold", fontSize: "64px", textAlign: "center" }}>
+        Related Case Studies
+      </h1>
       <div className="explore-card-container" style={{ margin: "20px" }}>
         <ExploreCard
           title={

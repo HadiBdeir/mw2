@@ -150,11 +150,19 @@ function AccountProtectionScreen() {
           paddingBottom: "60px",
         }}
       >
-        <h1>Related Digital</h1>
+        <h1>Related Case Studies</h1>
         <div className="pinkcard-row-styling" style={{ gap: "20px" }}>
           <ExploreCard
             title="Social Media and Online Identity"
-            text="Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?"
+            text={
+              <>
+                Soumayya is a student in 10th grade that enjoys photography and
+                Photoshop. However, are there limits to what is appropriate to
+                Photoshop and share online?
+                <br />
+                <br />
+              </>
+            }
             examples={["Digital Privacy", "Social Media", "Ages 10+"]}
           />
           <ExploreCard
