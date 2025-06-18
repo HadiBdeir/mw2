@@ -160,10 +160,9 @@ function HomeScreen() {
           Discuss and reflect on digital journeys with your spouse, children,
           and students.
         </p>
-        <MiniCard
-          title="Read Digital Journeys"
-          link={"https://www.wikipedia.org/"}
-        />
+        <div onClick={() => navigate("/digital-journeys-homepage-screen")}>
+          <MiniCard title="Read Digital Journeys" />
+        </div>
       </div>
 
       <div
@@ -184,10 +183,9 @@ function HomeScreen() {
           <br />
           There are 9 digital citizenship principles.
         </p>
-        <MiniCard
-          title="Digital Citizenship Guide"
-          link={"https://www.wikipedia.org/"}
-        />
+        <div onClick={() => navigate("/coming-soon-screen")}>
+          <MiniCard title="Digital Citizenship Guide" />
+        </div>
       </div>
 
       <div

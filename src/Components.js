@@ -321,26 +321,31 @@ function MobileTopBar() {
                     Home
                   </p>
                 </li>
-                <li className="mobile-nav-item">
-                  <div
-                    onClick={() => navigate("/about-us")}
+                <li
+                  className="mobile-nav-item"
+                  onClick={() => navigate("/about-us")}
+                >
+                  <p
                     style={{
-                      cursor: "pointer",
                       fontWeight: "bold",
+                      cursor: "pointer",
                     }}
                   >
                     About
-                  </div>
+                  </p>
                 </li>
                 <li
                   className="mobile-nav-item"
                   onClick={() => navigate("/coming-soon-screen")}
-                  style={{
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                  }}
                 >
-                  Learning Center
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Learning Center
+                  </p>
                 </li>
                 <li className="mobile-nav-item">
                   <p
@@ -354,7 +359,7 @@ function MobileTopBar() {
                   </p>
                 </li>
                 <li className="mobile-nav-item">
-                  <a
+                  <p
                     onClick={() => navigate("/digital-citizenship")}
                     style={{
                       fontWeight: "bold",
@@ -364,13 +369,20 @@ function MobileTopBar() {
                     Digital Citizenship
                     <br />
                     Principles
-                  </a>
+                  </p>
                 </li>
                 <li
                   className="mobile-nav-item"
-                  style={{ padding: "10px", fontWeight: "bold" }}
+                  onClick={() => navigate("/coming-soon-screen")}
                 >
-                  <span>العربية</span>
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                    }}
+                  >
+                    العربية
+                  </p>
                 </li>
                 <li className="mobile-nav-item contact-item">
                   <a href="https://en.wikipedia.org/wiki/Main_Page">

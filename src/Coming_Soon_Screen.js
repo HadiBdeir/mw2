@@ -38,7 +38,7 @@ function ComingSoonScreen() {
               maxWidth: "1200px",
               margin: "0 auto",
               flexDirection: isMobile ? "column" : "row",
-              padding: isMobile ? "0 20px 40px 20px" : "100px 0 40px 0",
+              padding: isMobile ? "20px 20px 40px 20px" : "100px 0 40px 0",
             }}
           >
               <div
