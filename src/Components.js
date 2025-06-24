@@ -195,7 +195,6 @@ function MobileTopBar() {
               <h2
                 className="muwatana-title-styling"
                 style={{
-                  marginTop: "5px",
                   textDecoration: "underline",
                   cursor: "pointer",
                 }}
@@ -458,7 +457,6 @@ function BigScreenTopBar() {
               <h2
                 className="muwatana-title-styling"
                 style={{
-                  marginTop: "5px",
                   textDecoration: "underline",
                   cursor: "pointer",
                 }}
@@ -466,7 +464,7 @@ function BigScreenTopBar() {
               >
                 muwatana
               </h2>
-              <small style={{ marginBottom: "20px" }}>
+              <small style={{ marginBottom: "10px" }}>
                 learn to navigate the digital world safely
               </small>
             </div>
