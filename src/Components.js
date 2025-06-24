@@ -275,7 +275,7 @@ function MobileTopBar() {
                 Principles
               </a>
               <a
-                href="https://en.wikipedia.org/wiki/Main_Page"
+                href="https://isf.gov.lb/anonymous-complaints/"
                 className="nav-link"
               >
                 <button
@@ -384,7 +384,7 @@ function MobileTopBar() {
                   </p>
                 </li>
                 <li className="mobile-nav-item contact-item">
-                  <a href="https://en.wikipedia.org/wiki/Main_Page">
+                  <a href="https://isf.gov.lb/anonymous-complaints/ ">
                     <button
                       className="contact-button"
                       style={{ padding: "17px" }}
@@ -471,7 +471,7 @@ function BigScreenTopBar() {
 
             {/* Desktop navigation - search, contact, arabic on the right */}
             <div className="desktop-nav-right">
-              <a href="https://en.wikipedia.org/wiki/Main_Page">
+              <a href="https://isf.gov.lb/anonymous-complaints/ ">
                 <button
                   style={{
                     color: "white",
@@ -489,10 +489,12 @@ function BigScreenTopBar() {
                 </button>
               </a>
               <span
+                onClick={() => navigate("/coming-soon-screen")}
                 style={{
                   fontWeight: "bold",
                   color: "white",
                   paddingRight: "50px",
+                  cursor: "pointer",
                 }}
               >
                 العربية
@@ -740,7 +742,7 @@ function BottomBar() {
 
         {isMobile && (
           <a
-            href="https://en.wikipedia.org/wiki/Main_Page"
+            href="https://isf.gov.lb/anonymous-complaints/ "
             className="nav-link"
           >
             <button
@@ -762,7 +764,10 @@ function BottomBar() {
       </div>
 
       {!isMobile && (
-        <a href="https://en.wikipedia.org/wiki/Main_Page" className="nav-link">
+        <a
+          href="https://isf.gov.lb/anonymous-complaints/ "
+          className="nav-link"
+        >
           <button
             style={{
               color: "white",
@@ -1493,7 +1498,7 @@ const ReportButton = () => {
         justifyContent: "center",
       }}
     >
-      <a href="https://en.wikipedia.org/wiki/Main_Page" className="nav-link">
+      <a href="https://isf.gov.lb/anonymous-complaints/" className="nav-link">
         <button
           style={buttonStyle}
           onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
