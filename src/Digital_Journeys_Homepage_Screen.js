@@ -163,16 +163,20 @@ function DigitalJourneysHomepage() {
               "Ages 12-18",
               "Environment",
             ]}
+            link="/digital-journeys-sample-screen"
           />
           <ExploreCard
             title="Cyberbullying"
             text="Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?"
             examples={["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"]}
+            link="/digital-journeys-sample-screen"
           />
           <ExploreCard
             title="Unfollowing the Hunt"
             text="Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?"
             examples={["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"]}
+            link="/digital-journeys-sample-screen"
+
           />
         </section>
         <section style={{ marginTop: isMobile ? "100px" : "230px" }}>
