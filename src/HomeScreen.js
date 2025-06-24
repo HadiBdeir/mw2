@@ -199,6 +199,7 @@ function HomeScreen() {
         <h2>Popular Topics</h2>
         <div className="pinkcard-row-styling">
           <PinkCard
+            link={"mw2/coming-soon-screen"}
             title={
               <>
                 Setting up 2-Factor <br /> Authentication
@@ -207,6 +208,7 @@ function HomeScreen() {
             content={<>Keep your account safe with an extra security step</>}
           />
           <PinkCard
+            link={"mw2/coming-soon-screen"}
             title={
               <>
                 Setting up parental
@@ -223,6 +225,7 @@ function HomeScreen() {
             }
           />
           <PinkCard
+            link={"mw2/coming-soon-screen"}
             title={<>Cyberattacks</>}
             content={
               <>
