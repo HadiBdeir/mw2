@@ -183,7 +183,7 @@ function HomeScreen() {
           <br />
           There are 9 digital citizenship principles.
         </p>
-        <div onClick={() => navigate("/coming-soon-screen")}>
+        <div onClick={() => navigate("/digital-citizenship")}>
           <MiniCard title="Digital Citizenship Guide" />
         </div>
       </div>

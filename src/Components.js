@@ -227,7 +227,7 @@ function MobileTopBar() {
                   Home
                 </p>
               </div>
-              <div onClick={() => navigate("/about-us")}>
+              <div onClick={() => navigate("/about_us")}>
                 <p
                   style={{
                     margin: "10px",
@@ -523,7 +523,7 @@ function BigScreenTopBar() {
                 </li>
                 <li className="mobile-nav-item">
                   <a
-                    onClick={() => navigate("/about-us")}
+                    onClick={() => navigate("/about_us")}
                     style={{
                       fontWeight: "bold",
                       cursor: "pointer",
@@ -612,7 +612,7 @@ function BigScreenTopBar() {
                 </p>
               </div>
               <a
-                onClick={() => navigate("/resources-cybersecurity")}
+                onClick={() => navigate("/about-us")}
                 className="nav-item-link-header"
                 style={{
                   color: "black",
@@ -635,7 +635,7 @@ function BigScreenTopBar() {
                 </p>
               </div>
               <p
-                onClick={scrollToDigitalJourneys}
+                onClick={() => navigate("/digital-journeys-homepage-screen")}
                 className="nav-item-link-header"
                 style={{
                   color: "black",
