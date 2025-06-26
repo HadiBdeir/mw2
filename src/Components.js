@@ -82,7 +82,7 @@ function MiniCard({ title, link }) {
   );
 }
 
-function PinkCard({ title, content, link }) {
+function PinkCard({ title, content, link, onClick }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -92,6 +92,7 @@ function PinkCard({ title, content, link }) {
   }, []);
   return (
     <a
+      onClick={onClick}
       href={link}
       style={{ textDecoration: "none" }}
       target="_blank"

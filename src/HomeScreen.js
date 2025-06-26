@@ -201,7 +201,7 @@ function HomeScreen() {
         <h2>Popular Topics</h2>
         <div className="pinkcard-row-styling">
           <PinkCard
-            link={"mw2/coming-soon-screen"}
+            onClick={() => navigate("/coming-soon-screen")}
             title={
               <>
                 Setting up 2-Factor <br /> Authentication
@@ -210,23 +210,16 @@ function HomeScreen() {
             content={<>Keep your account safe with an extra security step</>}
           />
           <PinkCard
-            link={"mw2/coming-soon-screen"}
+            onClick={() => navigate("/coming-soon-screen")}
             title={<>Setting up parental Controls</>}
             content={
               <>Take control of what your child can do on their device</>
             }
           />
           <PinkCard
-            link={"mw2/coming-soon-screen"}
+            onClick={() => navigate("/coming-soon-screen")}
             title={<>Cyberattacks</>}
-            content={
-              <>
-                {/* <br /> What is a cyberattack and
-                <br />
-                how can you avoid them? */}
-                What is a cyberattack and how can you avoid them.
-              </>
-            }
+            content={<>What is a cyberattack and how can you avoid them.</>}
           />
         </div>
       </div>
