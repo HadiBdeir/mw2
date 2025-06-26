@@ -257,7 +257,7 @@ function MobileTopBar() {
               >
                 Digital Journeys
               </p>
-              <a
+              <div
                 onClick={() => navigate("/digital-citizenship")}
                 className="nav-link"
                 style={{
@@ -270,7 +270,7 @@ function MobileTopBar() {
                 Digital Citizenship
                 <br />
                 Principles
-              </a>
+              </div>
               <a
                 href="https://isf.gov.lb/anonymous-complaints/"
                 className="nav-link"
@@ -519,7 +519,7 @@ function BigScreenTopBar() {
                   </p>
                 </li>
                 <li className="mobile-nav-item">
-                  <a
+                  <div
                     onClick={() => navigate("/about_us")}
                     style={{
                       fontWeight: "bold",
@@ -527,7 +527,7 @@ function BigScreenTopBar() {
                     }}
                   >
                     About
-                  </a>
+                  </div>
                 </li>
                 <li
                   className="mobile-nav-item"
@@ -551,7 +551,7 @@ function BigScreenTopBar() {
                   </p>
                 </li>
                 <li className="mobile-nav-item">
-                  <a
+                  <div
                     onClick={() => navigate("/digital-citizenship")}
                     style={{
                       fontWeight: "bold",
@@ -559,7 +559,7 @@ function BigScreenTopBar() {
                     }}
                   >
                     Digital Citizenship Principles
-                  </a>
+                  </div>
                 </li>
                 <li
                   className="mobile-nav-item"
@@ -608,7 +608,7 @@ function BigScreenTopBar() {
                   Home
                 </p>
               </div>
-              <a
+              <div
                 onClick={() => navigate("/about-us")}
                 className="nav-item-link-header"
                 style={{
@@ -618,7 +618,7 @@ function BigScreenTopBar() {
                 }}
               >
                 About
-              </a>
+              </div>
               <div onClick={() => navigate("/coming-soon-screen")}>
                 <p
                   className="nav-item-link-header"
@@ -642,7 +642,7 @@ function BigScreenTopBar() {
               >
                 Digital Journeys
               </p>
-              <a
+              <div
                 onClick={() => navigate("/digital-citizenship")}
                 className="nav-item-link-header"
                 style={{
@@ -652,7 +652,7 @@ function BigScreenTopBar() {
                 }}
               >
                 Digital Citizenship Principles
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -663,6 +663,7 @@ function BigScreenTopBar() {
 
 function BottomBar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -694,18 +695,20 @@ function BottomBar() {
             gap: isMobile ? undefined : "30px",
           }}
         >
-          <a
-            href="https://en.wikipedia.org/wiki/Main_Page"
+          <div
             style={{ color: "white", textDecoration: "none" }}
+            onClick={() => navigate("/coming-soon-screen")}
+            cursor="pointer"
           >
             <small>Contact us</small>
-          </a>
-          <a
-            href="https://en.wikipedia.org/wiki/Main_Page"
+          </div>
+          <div
+            onClick={() => navigate("/coming-soon-screen")}
+            cursor="pointer"
             style={{ color: "white", textDecoration: "none" }}
           >
             <small>Help</small>
-          </a>
+          </div>
           {isMobile ? (
             <p style={{ color: "white", textDecoration: "none" }}>
               <small>
