@@ -209,19 +209,9 @@ function HomeScreen() {
           />
           <PinkCard
             link={"mw2/coming-soon-screen"}
-            title={
-              <>
-                Setting up parental
-                <br />
-                Controls
-              </>
-            }
+            title={<>Setting up parental Controls</>}
             content={
-              <>
-                r Take control of what your
-                <br />
-                child can do on their device
-              </>
+              <>Take control of what your child can do on their device</>
             }
           />
           <PinkCard
@@ -232,12 +222,7 @@ function HomeScreen() {
                 {/* <br /> What is a cyberattack and
                 <br />
                 how can you avoid them? */}
-                <br />
-                What is a cyberattack
-                <br />
-                and how can you
-                <br />
-                avoid them.
+                What is a cyberattack and how can you avoid them.
               </>
             }
           />

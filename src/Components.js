@@ -99,9 +99,8 @@ function PinkCard({ title, content, link }) {
     >
       <div
         style={{
-          minWidth: "200px",
           height: isMobile ? undefined : "190px",
-          width: isMobile ? "240px" : undefined,
+          width: isMobile ? "240px" : 210,
           border: "none",
           padding: "1px 20px 0px",
           borderRadius: "0px 15px 15px 0px",
