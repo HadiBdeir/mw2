@@ -54,9 +54,7 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
           <div style={{ fontSize: "100px", textAlign: "center" }}>😺</div>
         </>
       )}
-      <h3 style={{ textDecoration: "underline", fontWeight: "bold" }}>
-        {title}
-      </h3>
+      <h3 style={{ fontWeight: "bold" }}>{title}</h3>
       <p>{content}</p>
     </div>
   );

@@ -218,7 +218,7 @@ function HomeScreen() {
             }
             content={
               <>
-                Take control of what your
+                r Take control of what your
                 <br />
                 child can do on their device
               </>
