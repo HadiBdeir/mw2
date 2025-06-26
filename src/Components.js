@@ -687,10 +687,11 @@ function BottomBar() {
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
+            flexDirection: isMobile ? "column" : "row",
             alignItems: "flex-start",
             textAlign: "left",
-            width: "80px",
+            width: isMobile ? "80px" : "500px",
+            gap: isMobile ? undefined : "30px",
           }}
         >
           <a
@@ -721,7 +722,7 @@ function BottomBar() {
               </small>
             </p>
           ) : (
-            <p style={{ color: "white", textDecoration: "none" }}>
+            <p style={{ color: "white", textDecoration: "none", margin: "0" }}>
               <small>
                 Icons & illustrations by{" "}
                 <a
