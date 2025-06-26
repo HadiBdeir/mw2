@@ -36,16 +36,18 @@ function HomeScreen() {
           padding: isMobile ? "20px" : "0",
         }}
       >
-        <div>
+        <div
+          style={{ maxWidth: isMobile ? "100%" : "400px", textAlign: "left" }}
+        >
           <h1
             className={isMobile ? "muwatana-header-styling" : ""}
             style={{ fontSize: isMobile ? "30px" : "70px" }}
           >
-            Welcome to <br /> muwatana
+            Welcome to muwatana
           </h1>
           <p style={{ fontSize: isMobile ? "14px" : "20px" }}>
-            Learn how to stay safe online, spot <br /> fake news, balance screen
-            time, <br /> guide children in the digital world
+            Learn how to stay safe online, spot fake news, balance screen time,
+            guide children in the digital world
           </p>
         </div>
         <div>
