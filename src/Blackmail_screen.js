@@ -44,7 +44,7 @@ function BlackmailScreen() {
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: isMobile ? "60vh" : "100vh",
+          minHeight: isMobile ? "60vh" : "77vh",
           textAlign: "center",
           gap: isMobile ? "20px" : "40px",
           padding: isMobile ? "20px" : "0",
@@ -141,17 +141,23 @@ function BlackmailScreen() {
           />
           <InfoPackWithButton
             picture={"ri_information-off-line.png"}
-            title={"Do not delete any messages sent to you by the attacker: they will be used for evidence."}
+            title={
+              "Do not delete any messages sent to you by the attacker: they will be used for evidence."
+            }
             imageOnTop={isMobile}
           />
           <InfoPackWithButton
             picture={"ix_hat-man.png"}
-            title={"Do not tell or hint to the attacker that you will be informing the authorities."}
+            title={
+              "Do not tell or hint to the attacker that you will be informing the authorities."
+            }
             imageOnTop={isMobile}
           />
           <InfoPackWithButton
             picture={"material-symbols_no-photography-outline.png"}
-            title={"Report any accounts or posts that share your private information."}
+            title={
+              "Report any accounts or posts that share your private information."
+            }
             imageOnTop={isMobile}
           />
         </div>

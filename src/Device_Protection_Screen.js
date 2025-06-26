@@ -32,7 +32,7 @@ function DeviceProtectionScreen() {
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: isMobile ? "60vh" : "100vh",
+          minHeight: isMobile ? "60vh" : "77vh",
           textAlign: "center",
           gap: isMobile ? "20px" : "40px",
           padding: isMobile ? "20px" : "0",
@@ -104,7 +104,7 @@ function DeviceProtectionScreen() {
           <h1 style={{ fontSize: "45px", textAlign: "center", width: "100%" }}>
             To keep your device safe
           </h1>
-          <div style={{  }}>
+          <div style={{}}>
             <InfoPackWithButton
               picture={"Vector (5).png"}
               title={"Limit access to your device"}

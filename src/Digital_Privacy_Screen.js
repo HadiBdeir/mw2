@@ -37,7 +37,7 @@ function DigitalPrivacyScreen() {
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: isMobile ? "60vh" : "100vh",
+          minHeight: isMobile ? "60vh" : "77vh",
           textAlign: "center",
           gap: isMobile ? "20px" : "40px",
           padding: isMobile ? "20px" : "0",

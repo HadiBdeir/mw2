@@ -35,7 +35,7 @@ function PhishingScreen() {
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: isMobile ? "60vh" : "100vh",
+          minHeight: isMobile ? "60vh" : "77vh",
           textAlign: "center",
           gap: isMobile ? "20px" : "40px",
           padding: isMobile ? "20px" : "0",
@@ -336,11 +336,9 @@ function PhishingScreen() {
             "https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html"
           }
           title={<>Facts About Phishing</>}
-          content={
-            [
-              "Legitimate organizations will never ask for sensitive information via email. When in doubt, contact the organization directly using their official contact information."
-            ]
-          }
+          content={[
+            "Legitimate organizations will never ask for sensitive information via email. When in doubt, contact the organization directly using their official contact information.",
+          ]}
         />
       </div>
       <div
