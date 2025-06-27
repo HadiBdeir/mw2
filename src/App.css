@@ -488,6 +488,7 @@ a {
 }
 
 .explore-card-styling {
+  position: relative;
   width: 390px;
   height: 475px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -501,6 +502,7 @@ a {
   background-color: white;
   display: flex;
   flex-direction: column;
+  padding-bottom: 20px;
 }
 
 .explore-card-container {
@@ -512,11 +514,13 @@ a {
 }
 
 .title {
-  width: 285px;
   font-weight: bold;
+  font-size: 22px;
+  height: 80px; /* or adjust until all titles fit well */
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
   font-size: 32px;
-  padding-top: 30px;
-  margin: 0 auto 10px;
 }
 
 .card-text {
@@ -524,6 +528,7 @@ a {
   font-size: 20px;
   width: 309px;
   margin: 0 auto;
+  height: 200px;
 }
 
 .orange-button-container {
@@ -550,7 +555,6 @@ a {
   height: 40px;
   width: 203px;
   font-weight: normal;
-  margin-bottom: 25px;
   border: none;
 }
 
