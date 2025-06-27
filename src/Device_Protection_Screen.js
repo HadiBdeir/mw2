@@ -231,37 +231,16 @@ function DeviceProtectionScreen() {
           Related Topics
         </h1>
         <div className="pinkcard-row-styling">
-          <PinkCard
-            title={
-              <>
-                Setting up 2-Factor
-                <br />
-                Authentication
-              </>
-            }
-            content={
-              <>
-                Keep your account safe with
-                <br />
-                an extra security step.
-              </>
-            }
-          />
-          <div>
+          <div onClick={() => navigate("/coming-soon-screen")}>
             <PinkCard
-              onClick={() => navigate("/creating_strong_password_screen")}
-              title={
-                <>
-                  Creating a <br />
-                  password
-                </>
-              }
-              content={
-                <>
-                  Learn how to create a<br />
-                  strong, safe password.
-                </>
-              }
+              title={<>Setting up 2-Factor Authentication</>}
+              content={<>Keep your account safe with an extra security step.</>}
+            />
+          </div>
+          <div onClick={() => navigate("/creating_strong_password_screen")}>
+            <PinkCard
+              title={<>Creating a password</>}
+              content={<>Learn how to create a strong, safe password.</>}
             />
           </div>
           <div onClick={() => navigate("/phishing-screen")}>
@@ -269,11 +248,7 @@ function DeviceProtectionScreen() {
               title={<>Phishing</>}
               content={
                 <>
-                  A popular type <br />
-                  cyberattacks is phishing.
-                  <br />
-                  Learn how to protect
-                  <br />
+                  A popular type cyberattacks is phishing. Learn how to protect
                   yourself.
                 </>
               }
