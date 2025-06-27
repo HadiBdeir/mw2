@@ -1622,6 +1622,7 @@ const PropertiesOfAStrongPassword = () => {
                 </div>
                 <div
                   style={{
+                    textAlign: "left",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -1760,7 +1761,14 @@ const PropertiesOfAStrongPassword = () => {
                   style={{ width: "32px", height: "40px" }}
                 />
               </div>
-              <div>
+              <div
+                style={{
+                  textAlign: "left",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
                 <h2 style={{ fontSize: "24px", margin: 0 }}>{prop.title}</h2>
                 <p
                   style={{
@@ -1804,17 +1812,26 @@ const PropertiesOfAStrongPassword = () => {
                   style={{ width: "32px", height: "40px" }}
                 />
               </div>
-              <div>
-                <h2 style={{ fontSize: "24px", margin: 0 }}>{prop.title}</h2>
-                <p
-                  style={{
-                    fontSize: "16px",
-                    marginTop: "5px",
-                    fontWeight: "400",
-                  }}
-                >
-                  {prop.description}
-                </p>
+              <div
+                style={{
+                  textAlign: "left",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <div>
+                  <h2 style={{ fontSize: "24px", margin: 0 }}>{prop.title}</h2>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      marginTop: "5px",
+                      fontWeight: "400",
+                    }}
+                  >
+                    {prop.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
@@ -1889,6 +1906,7 @@ const PasswordManager = () => {
     width: isMobile ? "100%" : "970px",
     fontSize: isMobile ? "16px" : "20px",
     lineHeight: "1.2",
+    textAlign: "left",
   };
 
   const passwordManagersBanner = {
