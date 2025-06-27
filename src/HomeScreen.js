@@ -200,27 +200,30 @@ function HomeScreen() {
       >
         <h2>Popular Topics</h2>
         <div className="pinkcard-row-styling">
-          <PinkCard
-            onClick={() => navigate("/coming-soon-screen")}
-            title={
-              <>
-                Setting up 2-Factor <br /> Authentication
-              </>
-            }
-            content={<>Keep your account safe with an extra security step</>}
-          />
-          <PinkCard
-            onClick={() => navigate("/coming-soon-screen")}
-            title={<>Setting up parental Controls</>}
-            content={
-              <>Take control of what your child can do on their device</>
-            }
-          />
-          <PinkCard
-            onClick={() => navigate("/coming-soon-screen")}
-            title={<>Cyberattacks</>}
-            content={<>What is a cyberattack and how can you avoid them.</>}
-          />
+          <div onClick={() => navigate("/coming-soon-screen")}>
+            <PinkCard
+              title={
+                <>
+                  Setting up 2-Factor <br /> Authentication
+                </>
+              }
+              content={<>Keep your account safe with an extra security step</>}
+            />
+          </div>
+          <div onClick={() => navigate("/coming-soon-screen")}>
+            <PinkCard
+              title={<>Setting up parental Controls</>}
+              content={
+                <>Take control of what your child can do on their device</>
+              }
+            />
+          </div>
+          <div onClick={() => navigate("/coming-soon-screen")}>
+            <PinkCard
+              title={<>Cyberattacks</>}
+              content={<>What is a cyberattack and how can you avoid them.</>}
+            />
+          </div>
         </div>
       </div>
       <BottomBar />
