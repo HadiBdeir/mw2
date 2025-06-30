@@ -169,8 +169,8 @@ function Cyberattack() {
           style={{
             textAlign: "center",
             fontSize: isMobile ? "35px" : "64px",
-            marginTop: isMobile ? "40px" : "50px",
-            marginBottom: "80px",
+            marginTop: isMobile ? "20px" : "50px",
+            marginBottom: isMobile ? "0px" : "80px",
           }}
         >
           What is personal information?
@@ -178,22 +178,23 @@ function Cyberattack() {
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: isMobile ? "column" : "row",
             gap: "60px",
             padding: "20px",
-            alignItems: "flex-start",
-            marginBottom: "70px",
+            alignItems: isMobile ? "center" : "flex-start",
+            marginBottom: isMobile ? "0px" : "70px",
           }}
         >
           <img
             src="cyberattacks_picture.png"
             alt="Personal Information"
-            style={{ width: "590px", height: "auto" }}
+            style={{ width: isMobile ? "300px" : "590px", height: "auto" }}
           />
           <div
             style={{
               fontSize: "20px",
-              width: "600px",
+              marginTop: isMobile ? "-40px" : "undefined",
+              width: isMobile ? "340px" : "600px",
             }}
           >
             <p>
