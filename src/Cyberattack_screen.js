@@ -220,10 +220,8 @@ function Cyberattack() {
           </div>
         </div>
         <Remember
-          source={
-            "https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html"
-          }
-          title={<>Facts About Phishing</>}
+          source="https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html"
+          title="Remember"
           content={[
             "Even information that seems harmless can be pieced together with other data to build a detailed profile about you. Always pause and consider before sharing personal details online—especially on social media or unfamiliar sites.",
           ]}
@@ -237,7 +235,7 @@ function Cyberattack() {
           paddingBottom: "60px",
         }}
       >
-        <h1>Learning Center</h1>
+        <h1 style={{ fontSize: "64px" }}>Resources</h1>
         <div className="card-row-styling">
           <div className={isMobile ? "bottom-cards-mobile" : "bottom-cards"}>
             <div onClick={() => navigate("/blackmail-screen")}>
@@ -245,9 +243,7 @@ function Cyberattack() {
                 title="Viruses"
                 content={
                   <>
-                    Protect your online accounts such as
-                    <br />
-                    social media and email.
+                    Protect your online accounts such as social media and email.
                   </>
                 }
                 picture={"Vector (4).png"}
@@ -259,9 +255,8 @@ function Cyberattack() {
                   title="Phishing"
                   content={
                     <>
-                      Protect your devices from remote and
-                      <br />
-                      in-person vulnerabilities.
+                      Protect your devices from remote and in-person
+                      vulnerabilities.
                     </>
                   }
                   picture={"fluent_mail-link-24-filled.png"}

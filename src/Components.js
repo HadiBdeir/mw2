@@ -54,8 +54,10 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
           <div style={{ fontSize: "100px", textAlign: "center" }}>😺</div>
         </>
       )}
-      <h3 style={{ fontWeight: "bold" }}>{title}</h3>
-      <p>{content}</p>
+      <h3 style={{ fontWeight: "bold", fontSize: "24px", margin: "10px 0" }}>
+        {title}
+      </h3>
+      <p style={{ fontSize: "18px" }}>{content}</p>
     </div>
   );
 }
@@ -1367,8 +1369,7 @@ function Remember({ title, content, source }) {
           <ul
             style={{
               margin: 0,
-              paddingLeft: "20px",
-              paddingRight: "10px",
+              paddingLeft: "0px",
               paddingBottom: "25px",
               fontSize: "clamp(14px, 4vw, 18px)",
               maxWidth: "85%",
