@@ -271,14 +271,14 @@ function Cyberattack() {
         className="learning-center-styling"
         style={{
           justifyContent: "center",
-          paddingTop: "100px",
+          paddingTop: isMobile ? "0px" : "100px",
           paddingBottom: "60px",
         }}
       >
         <h1
           style={{
             fontSize: "64px",
-            marginBottom: "100px",
+            marginBottom: isMobile ? "40px" : "100px",
           }}
         >
           Related Topics
