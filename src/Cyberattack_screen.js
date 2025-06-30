@@ -219,6 +219,15 @@ function Cyberattack() {
             </ul>
           </div>
         </div>
+        <Remember
+          source={
+            "https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html"
+          }
+          title={<>Facts About Phishing</>}
+          content={[
+            "Even information that seems harmless can be pieced together with other data to build a detailed profile about you. Always pause and consider before sharing personal details online—especially on social media or unfamiliar sites.",
+          ]}
+        />
       </div>
       <div
         className="learning-center-styling"

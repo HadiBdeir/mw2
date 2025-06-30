@@ -1373,6 +1373,7 @@ function Remember({ title, content, source }) {
               fontSize: "clamp(14px, 4vw, 18px)",
               maxWidth: "85%",
               wordWrap: "break-word",
+              listStyleType: "none",
             }}
           >
             {content.map((contentItem, index) => (
