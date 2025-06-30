@@ -4,6 +4,7 @@ import Card, {
   BottomBar,
   BigScreenTopBar,
   InfoPackWithButton,
+  Remember,
 } from "./Components.js";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
@@ -154,6 +155,62 @@ function Cyberattack() {
             ]}
             imageOnTop={isMobile}
           />
+        </div>
+      </div>
+      <div>
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: isMobile ? "35px" : "64px",
+            marginTop: isMobile ? "40px" : "50px",
+            marginBottom: "80px",
+          }}
+        >
+          What is personal information?
+        </h1>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "60px",
+            padding: "20px",
+            alignItems: "flex-start",
+            marginBottom: "70px",
+          }}
+        >
+          <img
+            src="cyberattacks_picture.png"
+            alt="Personal Information"
+            style={{ width: "590px", height: "auto" }}
+          />
+          <div
+            style={{
+              fontSize: "20px",
+              width: "600px",
+            }}
+          >
+            <p>
+              Personal information is any information that could be used to
+              identify you or could give others an idea of who you are.
+            </p>
+            <ul
+              style={{
+                lineHeight: "1.8",
+              }}
+            >
+              <li>Your birthday.</li>
+              <li>Your address.</li>
+              <li>Your email address.</li>
+              <li>
+                Names of your family members, such as parents, spouse, and
+                children.
+              </li>
+              <li>Internet browsing history.</li>
+              <li>
+                Your health data, such as genetic conditions and surgeries.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div
