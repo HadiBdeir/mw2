@@ -157,7 +157,14 @@ function Cyberattack() {
           />
         </div>
       </div>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "40px 20px",
+        }}
+      >
         <h1
           style={{
             textAlign: "center",
