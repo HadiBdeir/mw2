@@ -232,10 +232,11 @@ function Cyberattack() {
         style={{
           justifyContent: "center",
           paddingTop: "20px",
-          paddingBottom: "60px",
+          paddingBottom: "110px",
+          backgroundColor: "#FAEFF1",
         }}
       >
-        <h1 style={{ fontSize: "64px" }}>Resources</h1>
+        <h1 style={{ fontSize: "64px", margin: "0 0 25px" }}>Resources</h1>
         <div className="card-row-styling">
           <div className={isMobile ? "bottom-cards-mobile" : "bottom-cards"}>
             <div onClick={() => navigate("/blackmail-screen")}>
@@ -270,11 +271,18 @@ function Cyberattack() {
         className="learning-center-styling"
         style={{
           justifyContent: "center",
-          paddingTop: "20px",
+          paddingTop: "100px",
           paddingBottom: "60px",
         }}
       >
-        <h1>Related Topics</h1>
+        <h1
+          style={{
+            fontSize: "64px",
+            marginBottom: "100px",
+          }}
+        >
+          Related Topics
+        </h1>
         <div className="pinkcard-row-styling">
           <PinkCard
             title={
