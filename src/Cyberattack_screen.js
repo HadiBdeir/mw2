@@ -35,6 +35,8 @@ function Cyberattack() {
           textAlign: "center",
           gap: isMobile ? "20px" : "40px",
           padding: isMobile ? "20px" : "0",
+          maxWidth: "100vw",
+          overflowX: "hidden",
         }}
         className="background-color-verylightorange"
       >
