@@ -9,12 +9,12 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
   return (
     <div
       style={{
-        width: "275px",
+        width: isMobile ? "275px" : "335px",
         border: "1px solid lightgray",
         borderBottomLeftRadius: "10px",
         borderBottomRightRadius: "10px",
-        padding: "40px",
-        paddingTop: "33px",
+        padding: isMobile ? "40px" : "10px",
+        paddingTop: "53px",
         margin: "10px",
         boxShadow: "0px 4px 5px rgba(0, 0, 0, 0.2)",
         cursor: "pointer",
@@ -23,7 +23,7 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
         maxWidth: "500px",
         backgroundColor: backgroundColor || "white",
         position: "relative",
-        height: isMobile ? undefined : "200px",
+        height: isMobile ? undefined : "270px",
         ...style,
       }}
       onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
@@ -54,10 +54,16 @@ function Card({ title, content, picture, backgroundColor, style = {} }) {
           <div style={{ fontSize: "100px", textAlign: "center" }}>😺</div>
         </>
       )}
-      <h3 style={{ fontWeight: "bold", fontSize: "24px", margin: "10px 0" }}>
+      <h3
+        style={{
+          fontWeight: "bold",
+          fontSize: "24px",
+          margin: isMobile ? "10px 0" : "10px 0 40px 0",
+        }}
+      >
         {title}
       </h3>
-      <p style={{ fontSize: "18px" }}>{content}</p>
+      <p style={{ fontSize: isMobile ? "18px" : "20px" }}>{content}</p>
     </div>
   );
 }
