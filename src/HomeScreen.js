@@ -21,6 +21,24 @@ function HomeScreen() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/mw2/json_files/homescreen.json")
+      .then((response) => {
+        console.log("Status:", response.status);
+        return response.json();
+      })
+      .then((json) => {
+        console.log("JSON Loaded:", json);
+        setData(json);
+      });
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       {!isMobile ? <BigScreenTopBar /> : <MobileTopBar />}
@@ -43,17 +61,16 @@ function HomeScreen() {
             className={isMobile ? "muwatana-header-styling" : ""}
             style={{ fontSize: isMobile ? "30px" : "70px" }}
           >
-            Welcome to muwatana
+            {data.sections[0].title}
           </h1>
           <p style={{ fontSize: isMobile ? "14px" : "20px" }}>
-            Learn how to stay safe online, spot fake news, balance screen time,
-            guide children in the digital world
+            {data.sections[0].description}
           </p>
         </div>
         <div>
           <img
-            src={process.env.PUBLIC_URL + "/twopeoplestarringateachother.png"}
-            alt="Apple"
+            src={data.sections[0].image}
+            alt="iamge"
             className="image-styling"
             style={{
               maxWidth: isMobile ? "80%" : "400px",
@@ -64,7 +81,7 @@ function HomeScreen() {
         </div>
       </div>
       <div className="background-color-verylightpink learning-center-styling">
-        <h2>Learning Center</h2>
+        <h1>{data.sections[1].title}</h1>
         <div
           className="four-card-grid-display-styling"
           style={{
@@ -76,68 +93,32 @@ function HomeScreen() {
         >
           <div onClick={() => navigate("/resources-cybersecurity")}>
             <Card
-              title="Cybersecurity & Privacy"
-              content={
-                <>
-                  Stay safe online by learning practical
-                  <br />
-                  tips to protect your personal
-                  <br />
-                  information and avoid digital
-                  <br />
-                  threats.
-                </>
-              }
+              title={data.sections[1].items[0].title}
+              content={data.sections[1].items[0].description}
               picture={process.env.PUBLIC_URL + "/Vector (15).png"}
               backgroundColor="white"
             />
           </div>
           <div onClick={() => navigate("/coming-soon-screen")}>
             <Card
-              title="Parenting in the Digital Age"
-              content={
-                <>
-                  Discover how to identify fake news,
-                  <br />
-                  navigate online content responsibly,
-                  <br />
-                  and develop critical thinking skills for
-                  <br />
-                  the digital age.
-                </>
-              }
+              title={data.sections[1].items[1].title}
+              content={data.sections[1].items[1].description}
               picture={process.env.PUBLIC_URL + "/Component (1).png"}
               backgroundColor="white"
             />
           </div>
           <div onClick={() => navigate("/coming-soon-screen")}>
             <Card
-              title="Digital Health"
-              content={
-                <>
-                  Promote well-being in the digital world by managing screen
-                  time, maintaining healthy online habits, and balancing
-                  technology use.
-                </>
-              }
+              title={data.sections[1].items[2].title}
+              content={data.sections[1].items[2].description}
               picture={process.env.PUBLIC_URL + "/Vector (13).png"}
               backgroundColor="white"
             />
           </div>
           <div onClick={() => navigate("/coming-soon-screen")}>
             <Card
-              title="Media Literacy"
-              content={
-                <>
-                  Discover how to identify fake news,
-                  <br />
-                  navigate online content responsibly,
-                  <br />
-                  and develop critical thinking skills for
-                  <br />
-                  the digital age.
-                </>
-              }
+              title={data.sections[1].items[3].title}
+              content={data.sections[1].items[3].description}
               picture={process.env.PUBLIC_URL + "/Vector (14).png"}
               backgroundColor="white"
             />
@@ -157,13 +138,10 @@ function HomeScreen() {
           minHeight: "300px",
         }}
       >
-        <h2>Digital Journeys</h2>
-        <p>
-          Discuss and reflect on digital journeys with your spouse, children,
-          and students.
-        </p>
+        <h1>{data.sections[2].title}</h1>
+        <p>{data.sections[2].description}</p>
         <div onClick={() => navigate("/digital-journeys-homepage-screen")}>
-          <MiniCard title="Read Digital Journeys" />
+          <MiniCard title={data.sections[2].buttonLabel} />
         </div>
       </div>
 
@@ -178,15 +156,10 @@ function HomeScreen() {
           minHeight: "300px",
         }}
       >
-        <h2>Discover Digital Citizenship</h2>
-        <p>
-          In today's world, we all need the skill of a good digital citizenship
-          to be safe and productive online.
-          <br />
-          There are 9 digital citizenship principles.
-        </p>
+        <h1>{data.sections[3].title}</h1>
+        <p>{data.sections[3].description}</p>
         <div onClick={() => navigate("/digital-citizenship")}>
-          <MiniCard title="Digital Citizenship Guide" />
+          <MiniCard title={data.sections[3].buttonLabel} />
         </div>
       </div>
 
@@ -198,30 +171,24 @@ function HomeScreen() {
           paddingBottom: "60px",
         }}
       >
-        <h2>Popular Topics</h2>
+        <h1>{data.sections[4].title}</h1>
         <div className="pinkcard-row-styling">
           <div onClick={() => navigate("/coming-soon-screen")}>
             <PinkCard
-              title={
-                <>
-                  Setting up 2-Factor <br /> Authentication
-                </>
-              }
-              content={<>Keep your account safe with an extra security step</>}
+              title={data.sections[4].items[0].title}
+              content={data.sections[4].items[0].description}
             />
           </div>
           <div onClick={() => navigate("/coming-soon-screen")}>
             <PinkCard
-              title={<>Setting up parental Controls</>}
-              content={
-                <>Take control of what your child can do on their device</>
-              }
+              title={data.sections[4].items[1].title}
+              content={data.sections[4].items[1].description}
             />
           </div>
           <div onClick={() => navigate("/coming-soon-screen")}>
             <PinkCard
-              title={<>Cyberattacks</>}
-              content={<>What is a cyberattack and how can you avoid them.</>}
+              title={data.sections[4].items[2].title}
+              content={data.sections[4].items[2].description}
             />
           </div>
         </div>

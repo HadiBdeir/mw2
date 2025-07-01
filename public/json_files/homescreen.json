@@ -1,53 +1,61 @@
 {
-  "heroSection": {
-    "title": "Welcome to muwatana",
-    "description": "Learn how to stay safe online, spot fake news, balance screen time, guide children in the digital world",
-    "image": "/mw2/twopeoplestarringateachother.png"
-  },
-  "learningCenter": [
+  "sections": [
     {
-      "title": "Cybersecurity & Privacy",
-      "description": "Stay safe online by learning practical tips to protect your personal information and avoid digital threats.",
-      "icon": "/mw2/Vector (15).png"
+      "title": "Welcome to muwatana",
+      "description": "Learn how to stay safe online, spot fake news, balance screen time, guide children in the digital world",
+      "image": "/mw2/twopeoplestarringateachother.png"
     },
     {
-      "title": "Parenting in the Digital Age",
-      "description": "Discover how to identify fake news, navigate online content responsibly, and develop critical thinking skills for the digital age.",
-      "icon": "/mw2/Component (1).png"
+      "title": "Learning Center",
+      "items": [
+        {
+          "title": "Cybersecurity & Privacy",
+          "description": "Stay safe online by learning practical tips to protect your personal information and avoid digital threats.",
+          "icon": "/mw2/Vector (15).png"
+        },
+        {
+          "title": "Parenting in the Digital Age",
+          "description": "Discover how to identify fake news, navigate online content responsibly, and develop critical thinking skills for the digital age.",
+          "icon": "/mw2/Component (1).png"
+        },
+        {
+          "title": "Digital Health",
+          "description": "Promote well-being in the digital world by managing screen time, maintaining healthy online habits, and balancing technology use.",
+          "icon": "/mw2/Vector (13).png"
+        },
+        {
+          "title": "Media Literacy",
+          "description": "Discover how to identify fake news, navigate online content responsibly, and develop critical thinking skills for the digital age.",
+          "icon": "/mw2/Vector (14).png"
+        }
+      ]
     },
     {
-      "title": "Digital Health",
-      "description": "Promote well-being in the digital world by managing screen time, maintaining healthy online habits, and balancing technology use.",
-      "icon": "/mw2/Vector (13).png"
+      "title": "Digital Journeys",
+      "description": "Discuss and reflect on digital journeys with your spouse, children, and students.",
+      "buttonLabel": "Read Digital Journeys"
     },
     {
-      "title": "Media Literacy",
-      "description": "Discover how to identify fake news, navigate online content responsibly, and develop critical thinking skills for the digital age.",
-      "icon": "/mw2/Vector (14).png"
-    }
-  ],
-  "digitalJourneys": {
-    "title": "Digital Journeys",
-    "description": "Discuss and reflect on digital journeys with your spouse, children, and students.",
-    "buttonLabel": "Read Digital Journeys"
-  },
-  "digitalCitizenship": {
-    "title": "Discover Digital Citizenship",
-    "description": "In today's world, we all need the skill of a good digital citizenship to be safe and productive online. There are 9 digital citizenship principles.",
-    "buttonLabel": "Digital Citizenship Guide"
-  },
-  "popularTopics": [
-    {
-      "title": "Setting up 2-Factor Authentication",
-      "description": "Keep your account safe with an extra security step"
+      "title": "Discover Digital Citizenship",
+      "description": "In today's world, we all need the skill of a good digital citizenship to be safe and productive online. There are 9 digital citizenship principles.",
+      "buttonLabel": "Digital Citizenship Guide"
     },
     {
-      "title": "Setting up Parental Controls",
-      "description": "Take control of what your child can do on their device"
-    },
-    {
-      "title": "Cyberattacks",
-      "description": "What is a cyberattack and how can you avoid them."
+      "title": "Popular Topics",
+      "items": [
+        {
+          "title": "Setting up 2-Factor Authentication",
+          "description": "Keep your account safe with an extra security step"
+        },
+        {
+          "title": "Setting up Parental Controls",
+          "description": "Take control of what your child can do on their device"
+        },
+        {
+          "title": "Cyberattacks",
+          "description": "What is a cyberattack and how can you avoid them."
+        }
+      ]
     }
   ]
 }
