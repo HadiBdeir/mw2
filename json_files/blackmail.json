@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "Cyber Blackmail",
+    "description": "Cyber blackmail is a crime where hackers try to trick or pressure you into giving away private data, money, or doing something inappropriate. They may claim they have access to your private photos, videos, or browsing history — and threaten to leak them unless you obey. Victims often feel ashamed or too afraid to speak up or get help, but you're not alone — and support is always available to you.",
+    "image": "Identity-Theft--Streamline-Milano.png.png"
+  },
+  "victimHelp": {
+    "title": "If you are a Victim of Blackmail",
+    "steps": [
+      {
+        "image": "Vector (2).png",
+        "text": "If you are a child, teenager, or young adult, reach out to an adult you trust such as your parents or teachers."
+      },
+      {
+        "image": "stash_private-content.png",
+        "text": "Do not give the blackmailer what they are asking for."
+      },
+      {
+        "image": "ri_information-off-line.png",
+        "text": "Do not delete any messages sent to you by the attacker: they will be used for evidence."
+      },
+      {
+        "image": "ix_hat-man.png",
+        "text": "Do not tell or hint to the attacker that you will be informing the authorities."
+      },
+      {
+        "image": "material-symbols_no-photography-outline.png",
+        "text": "Report any accounts or posts that share your private information."
+      }
+    ]
+  },
+  "relatedCaseStudies": {
+    "title": "Related Case Studies",
+    "cards": [
+      {
+        "title": "Social Media and Online Identity",
+        "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+        "tags": ["Digital Privacy", "Social Media", "Ages 10+"]
+      },
+      {
+        "title": "Cybersecurity",
+        "link": "/resources-cybersecurity",
+        "text": "George and Hadi are enjoying their time in school with their new friend John. However, is everyone accepting of the new student in the WhatsApp group chat? And how will George and Hadi react?",
+        "tags": ["Cyberbullying", "Social Media", "Digital Privacy", "Ages 10+"]
+      },
+      {
+        "title": "Information literacy",
+        "text": "Asmaa and her husband Fadi have received some exclusive news on social media that will lead to the price of gasoline to skyrocket! Should they share this information?",
+        "tags": ["Information literacy", "Social Media", "Ages 10+"]
+      }
+    ]
+  },
+  "relatedTopics": {
+    "title": "Related Topics",
+    "topics": [
+      {
+        "title": "Setting up 2-Factor Authentication",
+        "content": "Keep your account safe with an extra security step."
+      },
+      {
+        "title": "Creating a password",
+        "content": "Learn how to create a strong, safe password.",
+        "link": "/creating_strong_password_screen"
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "sections": [
+    {
+      "title": "Digital Privacy",
+      "description": "Digital privacy is your right to keep your personal information private in the digital world.",
+      "image": "Create Account 3 Streamline Milano.png"
+    },
+    {
+      "title": "The dangers of poor digital privacy",
+      "description": "Poor digital privacy could lead to consequences that affect you, your family, and your friends. Some of these consequences could be:",
+      "items": ["Cyberattacks", "Blackmail", "Cyberstalking"],
+      "image": "DigitalPrivacyPersonIcon.png"
+    },
+    {
+      "title": "Remember",
+      "source": "https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html",
+      "items": [
+        "Anything you put on the internet is now public information, and you may be unable to delete it.",
+        "When you post photos of your child on public social media accounts, you are doing this without their consent."
+      ]
+    },
+    {
+      "title": "To maintain digital privacy",
+      "items": [
+        {
+          "title": "Be cautious when sharing personal information online",
+          "description": "Think twice when sharing information about yourself, your family, or your friends on the internet; once it is online, you cannot control its spread.",
+          "image": "Vector (2).png"
+        },
+        {
+          "title": "Keep your account private",
+          "description": "Most social media websites, such as Facebook, Instagram, and TikTok, have settings to keep the content of your account private. It is recommended to keep your page private, so strangers do not have access to your information.",
+          "image": "stash_private-content.png"
+        },
+        {
+          "title": "Provide minimal information for new online accounts",
+          "description": "For example, you are not required to provide your education, work experience, hometown, etc., to open a new Facebook account.",
+          "image": "ri_information-off-line.png"
+        },
+        {
+          "title": "Do not contact strangers",
+          "description": "Do not accept friend or follow requests from those you don't know on social media.",
+          "image": "ix_hat-man.png"
+        },
+        {
+          "title": "Do not allow others to share your photos without your consent",
+          "description": "This can include photos of yourself or your family. While you control the privacy settings of your account, you cannot do the same for others' accounts.",
+          "image": "material-symbols_no-photography-outline.png"
+        }
+      ]
+    },
+    {
+      "title": "Related Topics",
+      "items": [
+        {
+          "title": "Setting up 2-Factor Authentication",
+          "description": "Keep your account safe with an extra security step."
+        },
+        {
+          "title": "Creating a password",
+          "description": "Learn how to create a strong, safe password."
+        },
+        {
+          "title": "Phishing",
+          "description": "A popular type of cyberattacks is phishing. Learn how to protect yourself."
+        }
+      ]
+    }
+  ]
+}

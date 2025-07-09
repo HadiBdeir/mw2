@@ -1,0 +1,68 @@
+{
+  "title": "Account Protection",
+  "description": "Your social media and email accounts hold details about your digital identity and your personal information. If someone gets access to these accounts, they can obtain this information or even post and content on your behalf.",
+  "image": "Logged-In-3--Streamline-Milano.png.png",
+  "securityTips": [
+    {
+      "picture": "material-symbols_password.png",
+      "title": "Use a strong and unique password",
+      "description": [
+        "Use a strong password on all your accounts (social media, email, instant messaging, etc.) and do not use the same password for multiple accounts."
+      ]
+    },
+    {
+      "picture": "mdi_eye-off.png",
+      "title": "Keep your password a secret",
+      "description": [
+        "Do not share your password with others and do not enter your password in front of others. If you think your account has been infiltrated, change your password immediately."
+      ]
+    },
+    {
+      "picture": "material-symbols_lock.png",
+      "title": "Protect your account access",
+      "description": [
+        "Log out of your account after using it on a device that is not yours."
+      ]
+    },
+    {
+      "picture": "mdi_cog.png",
+      "title": "Take advantage of security settings",
+      "description": [
+        "Set up security & privacy settings in your account, such as limiting those who can see your posts to “friends only”, using two-factor authentication, and setting up spam protection."
+      ]
+    }
+  ],
+  "relatedCaseStudies": [
+    {
+      "title": "Social Media and Online Identity",
+      "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+      "examples": ["Digital Privacy", "Social Media", "Ages 10+"]
+    },
+    {
+      "title": "Cybersecurity",
+      "text": "George and Hadi are enjoying their time in school with their new friend John. However, is everyone accepting of the new student in the WhatsApp group chat? And how will George and Hadi react?",
+      "examples": [
+        "Cyberbullying",
+        "Social Media",
+        "Digital Privacy",
+        "Ages 10+"
+      ]
+    },
+    {
+      "title": "Information literacy",
+      "text": "Asmaa and her husband Fadi have received some exclusive news on social media that will lead to the price of gasoline to skyrocket! Should they share this information?",
+      "examples": ["Information literacy", "Social Media", "Ages 10+"]
+    }
+  ],
+  "relatedTopics": [
+    {
+      "title": "Setting up 2-Factor Authentication",
+      "content": "Keep your account safe with an extra security step."
+    },
+    {
+      "title": "Creating a password",
+      "content": "Learn how to create a strong, safe password.",
+      "navigateTo": "/creating_strong_password_screen"
+    }
+  ]
+}

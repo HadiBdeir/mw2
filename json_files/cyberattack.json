@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "Cyberattacks",
+    "description": "A cyberattack is a harmful attempt to gain unauthorized access to someone else's devices or information, whether it's an individual or an institution. The goal may be to delete important data, commit blackmail, steal money, or gain any other advantage from the stolen information.",
+    "image": "082157c332f85bee1e8ddaa4af8c5727a71a26d0.png"
+  },
+  "protection_steps": [
+    {
+      "title": "Keep your devices and accounts safe",
+      "description": [
+        "Follow good practices to keep your devices and accounts safe."
+      ],
+      "image": "Vector.png"
+    },
+    {
+      "title": "Beware of phishing attacks",
+      "description": [
+        "Be cautious when you receive emails or text messages with links attached to avoid phishing attacks."
+      ],
+      "image": "Vector.png"
+    },
+    {
+      "title": "Do not visit dangerous websites",
+      "description": [
+        "Do not visit suspicious websites, such as websites with many advertisements and websites meant to talk to strangers.",
+        "Avoid websites that do not start with `https`."
+      ],
+      "image": "Vector.png"
+    },
+    {
+      "title": "Protect your data in public",
+      "description": [
+        "Do not use public Wi-Fi or Wi-Fi offered in cafes, airports, malls, etc… If it is necessary, once you are finished with the Wi-Fi, forget the network.",
+        "When using your device in a public space, be aware of your surroundings and do not display private and sensitive information in front of others."
+      ],
+      "image": "Vector.png"
+    },
+    {
+      "title": "Maintain your digital privacy online",
+      "description": [
+        "Do not post private information and passwords on the internet as anything posted on the internet is now accessible by the public.",
+        "Do not send your personal information and passwords to anyone that asks you for it online, even if they claim to be an official organization such as a bank."
+      ],
+      "image": "Vector.png"
+    }
+  ],
+  "personal_info": {
+    "title": "What is personal information?",
+    "image": "cyberattacks_picture.png",
+    "description": "Personal information is any information that could be used to identify you or could give others an idea of who you are.",
+    "examples": [
+      "Your birthday.",
+      "Your address.",
+      "Your email address.",
+      "Names of your family members, such as parents, spouse, and children.",
+      "Internet browsing history.",
+      "Your health data, such as genetic conditions and surgeries."
+    ]
+  },
+  "remember": {
+    "title": "Remember",
+    "source": "https://www.cisco.com/c/en/us/products/security/secure-access/phishing-for-dummies.html",
+    "content": [
+      "Even information that seems harmless can be pieced together with other data to build a detailed profile about you. Always pause and consider before sharing personal details online—especially on social media or unfamiliar sites."
+    ]
+  },
+  "resources": [
+    {
+      "title": "Viruses",
+      "content": "Protect your online accounts such as social media and email.",
+      "image": "Vector (4).png",
+      "link": "/blackmail-screen"
+    },
+    {
+      "title": "Phishing",
+      "content": "Protect your devices from remote and in-person vulnerabilities.",
+      "image": "fluent_mail-link-24-filled.png",
+      "link": "/cyberattacks-screen"
+    }
+  ],
+  "related_topics": [
+    {
+      "title": "Setting up 2-Factor Authentication",
+      "content": "Keep your account safe with an extra security step."
+    },
+    {
+      "title": "Cyber-Blackmail",
+      "content": "Learn what to do if you are being blackmailed through technology."
+    },
+    {
+      "title": "Phishing",
+      "content": "A popular type of cyberattacks is phishing. Learn how to yourself.",
+      "link": "/phishing-screen"
+    }
+  ]
+}

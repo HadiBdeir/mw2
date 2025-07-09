@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "title": "Digital Journeys",
+    "image": "digital_journeys_homepage_top_photo.png",
+    "paragraphs": [
+      "In today’s connected world, every post, message, and click affects how we live and learn online. This collection of short stories explores a range of experiences—real digital choices, mistakes that lead to learning, and inspiring examples of technology being used for good.",
+      "Each story is meant to start meaningful discussions about important topics like online safety, privacy, kindness, false information, and how technology shapes our lives. Whether you're a teacher, parent, or student, these stories offer real-life situations that help us think about how to use the internet in smarter and more caring ways.",
+      "At the end of every story, you’ll find a few questions to help guide reflection and conversation. You can talk about the story with your family, your classmates, or in your classroom—anywhere people come together to talk and learn about life online."
+    ]
+  },
+  "sections": [
+    {
+      "title": "Digital Decisions",
+      "subtitle": "Real choices in the digital world",
+      "description": "What do you do if you see something wrong online? How do you decide what’s safe to share? When is using technology bad for my health? This section shares real moments when people ask similar questions while using technology. Read their stories and discuss what you think is the right decision.",
+      "cards": [
+        {
+          "title": "Unfollowing the Hunt",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": [
+            "Cyberbullying",
+            "Social Media",
+            "Ages 12-18",
+            "Environment"
+          ],
+          "link": "/digital-journeys-sample-screen"
+        },
+        {
+          "title": "Cyberbullying",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": ["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"],
+          "link": "/digital-journeys-sample-screen"
+        },
+        {
+          "title": "Unfollowing the Hunt",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": ["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"],
+          "link": "/digital-journeys-sample-screen"
+        }
+      ]
+    },
+    {
+      "title": "Click, Consider, Grow",
+      "subtitle": "Stories about digital mistakes",
+      "description": "We all make mistakes, but the cost can be high when mistakes are made using technology. This section discusses stories of people who made errors online and what they learned from them. Read their journeys and learn from their mistakes to make better choices in the future.",
+      "cards": [
+        {
+          "title": "Unfollowing the Hunt",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": [
+            "Cyberbullying",
+            "Social Media",
+            "Ages 12-18",
+            "Environment"
+          ]
+        },
+        {
+          "title": "Cyberbullying",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": ["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"]
+        },
+        {
+          "title": "Unfollowing the Hunt",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": ["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"]
+        }
+      ]
+    },
+    {
+      "title": "Connect, Create, Change",
+      "subtitle": "Using technology as a tool for progress",
+      "description": "Technology can do amazing things when we use it to help others. This section showcases inspiring examples of people using technology to solve problems and improve their communities. Read their journeys and see how technology can be a powerful tool for progress. When you’re done, think about how you can also use technology to connect, create, and change.",
+      "cards": [
+        {
+          "title": "Unfollowing the Hunt",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": [
+            "Cyberbullying",
+            "Social Media",
+            "Ages 12-18",
+            "Environment"
+          ]
+        },
+        {
+          "title": "Cyberbullying",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": ["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"]
+        },
+        {
+          "title": "Unfollowing the Hunt",
+          "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+          "examples": ["Cyberbullying", "Social Media", "Ages 10+", "Ages 10+"]
+        }
+      ]
+    }
+  ]
+}
