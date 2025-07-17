@@ -3,7 +3,7 @@
     {
       "title": "Welcome to muwatana",
       "description": "Learn how to stay safe online, spot fake news, balance screen time, guide children in the digital world",
-      "image": "/twopeoplestarringateachother.png"
+      "image": "twopeoplestarringateachother.png"
     },
     {
       "title": "Learning Center",
@@ -11,22 +11,22 @@
         {
           "title": "Cybersecurity & Privacy",
           "description": "Stay safe online by learning practical tips to protect your personal information and avoid digital threats.",
-          "icon": "/mw2/Vector (15).png"
+          "icon": "Vector (15).png"
         },
         {
           "title": "Parenting in the Digital Age",
           "description": "Discover how to identify fake news, navigate online content responsibly, and develop critical thinking skills for the digital age.",
-          "icon": "/mw2/Component (1).png"
+          "icon": "Component (1).png"
         },
         {
           "title": "Digital Health",
           "description": "Promote well-being in the digital world by managing screen time, maintaining healthy online habits, and balancing technology use.",
-          "icon": "/mw2/Vector (13).png"
+          "icon": "Vector (13).png"
         },
         {
           "title": "Media Literacy",
           "description": "Discover how to identify fake news, navigate online content responsibly, and develop critical thinking skills for the digital age.",
-          "icon": "/mw2/Vector (14).png"
+          "icon": "Vector (14).png"
         }
       ]
     },

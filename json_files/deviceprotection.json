@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "title": "Device Protection",
+    "description": "Your device contains your personal information such as your private photos, private messages, and social media accounts. Therefore, it is very important to keep your device.",
+    "image": "Logged-In-3--Streamline-Milano.png.png"
+  },
+  "steps": {
+    "title": "To keep your device safe",
+    "infoPacks": [
+      {
+        "title": "Limit access to your device",
+        "image": "Vector (5).png",
+        "description": [
+          "Set a strong password to protect your device and set Autolock on your phone and computer.",
+          "Perform a factory reset on your device before you give it away or sell it."
+        ]
+      },
+      {
+        "title": "Download Apps from trusted sources",
+        "image": "Vector (6).png",
+        "description": [
+          "Only download applications from trusted sources such as the App Store, Google Play Store, and official software websites."
+        ]
+      },
+      {
+        "title": "Install Antivirus and keep your device updated",
+        "image": "Vector (7).png",
+        "description": [
+          "Download Antivirus software to protect your device from viruses and keep it updated.",
+          "Always update your Operating system (Windows, Android, MacOS, iOS) and enable Automatic Updates."
+        ]
+      },
+      {
+        "title": "Avoid suspicious links and download requests",
+        "image": "Vector (8).png",
+        "description": [
+          "Do not click on ads or popups because it could download malware on your device without your knowledge.",
+          "Beware of emails and text messages with links attached to avoid phishing attacks.",
+          "Do not download content from emails sent to you by strangers."
+        ]
+      },
+      {
+        "title": "Keep your connections secure",
+        "image": "Vector (9).png",
+        "description": [
+          "Avoid connecting to public WiFi. If necessary, once you are done forget the network.",
+          "Enable the Firewall feature on your computer.",
+          "Turn off Bluetooth when it is not in use."
+        ]
+      },
+      {
+        "title": "Keep your devices physically secure",
+        "image": "Vector (10).png",
+        "description": [
+          "Do not plug in a USB that you do not know the source of.",
+          "Cover the camera of your devices when not in use to protect yourself from having your picture or video taken without your knowledge.",
+          "Enable the Find my Phone feature on your mobile device so you can find it in case it gets lost."
+        ]
+      }
+    ]
+  },
+  "relatedCaseStudies": {
+    "title": "Related Case Studies",
+    "exploreCards": [
+      {
+        "title": "Social Media and\nOnline Identity",
+        "text": "Soumayya is a student in 10th grade that enjoys photography and Photoshop. However, are there limits to what is appropriate to Photoshop and share online?",
+        "examples": ["Digital Privacy", "Social Media", "Ages 10+"]
+      },
+      {
+        "title": "Cyberbullying",
+        "text": "George and Hadi are enjoying their time in school with their new friend John. However, is everyone accepting of the new student in the WhatsApp group chat? And how will George and Hadi react?",
+        "examples": [
+          "Cyberbullying",
+          "Social Media",
+          "Digital Privacy",
+          "Ages 10+"
+        ]
+      },
+      {
+        "title": "Information\nLiteracy",
+        "text": "Asmaa and her husband Fadi have received some exclusive news on social media that will lead to the price of gasoline to skyrocket! Should they share this information?",
+        "examples": ["Digital Privacy", "Social Media", "Ages 10+"]
+      }
+    ]
+  },
+  "relatedTopics": {
+    "title": "Related Topics",
+    "pinkCards": [
+      {
+        "title": "Setting up 2-Factor Authentication",
+        "content": "Keep your account safe with an extra security step.",
+        "link": "/coming-soon-screen"
+      },
+      {
+        "title": "Creating a password",
+        "content": "Learn how to create a strong, safe password.",
+        "link": "/creating_strong_password_screen"
+      },
+      {
+        "title": "Phishing",
+        "content": "A popular type cyberattacks is phishing. Learn how to protect yourself.",
+        "link": "/phishing-screen"
+      }
+    ]
+  }
+}

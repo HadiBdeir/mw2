@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Digital Citizenship",
+    "image": "Digital_Citizenship_top_photo.png",
+    "qoute": "“Digital citizenship is the continuously developing norms of appropriate, responsible, and empowered technology use.” – Mike Ribble",
+    "paragraphs": [
+      "Today, technology is seen as a necessity. As technology advances, our dependence on it will also grow. Even if we choose to limit our interaction with technology, the world around us will continue to expose us to it, making it necessary to learn how to reap its benefits and avoid its misuse.",
+      "Similar to how we try to be good citizens in society with our friends, family, and neighbors, we also must learn how to conduct ourselves online appropriately. This concept is called ",
+      "When we use our digital devices, such as our phones, laptops, and even smart TVs, we act in a digital world where our actions affect ourselves and others. Digital citizenship education can ensure that we are able to use technology’s full potential in a safe, inclusive, and collaborative environment."
+    ]
+  },
+  "sections": [
+    {
+      "title": "The Nine Themes of Digital Citizenship",
+      "items": [
+        {
+          "title": "Digital Access: Ensuring everyone has equal access to technology.",
+          "description": "With differences in socioeconomic status, physical abilities, mental abilities, and physical locations, it’s important to ensure everyone has an equitable opportunity to use technology."
+        },
+        {
+          "title": "Digital Etiquette: Thinking of others when using technology.",
+          "description": "When using technology, you must take into consideration those who are around you physically and those you interact with online. Is it polite to answer your phone mid-conversation? Is it appropriate to be rude to an online user who differs in opinion from you? These are questions that must be answered when defining digital etiquette.",
+          "image": "Computer_world_map.png"
+        },
+        {
+          "title": "Digital Literacy & Fluency: The ability to use technology and to know when and how to use it.",
+          "description": "Although we may have the basic skills to use technology, such as typing on a keyboard or swiping on a screen, this does not mean we fully understand how to use it to its full potential. For example, even though a person may know how to post on Facebook, they may not know how to alter their advertisement settings or use a search engine to learn how. Moreover, access to a large and diverse amount of information must also be accompanied by the ability to discern reliable sources of information from those that are not. The more fluent one is in technology, the less likely they are to misuse it."
+        },
+        {
+          "title": "Digital Communication and Collaboration: The electronic exchange of information.",
+          "description": "Technology has made it possible to reach anyone at any time. It has also made it easier to express ourselves and to spread our ideas to a larger audience. However, is that necessarily a good thing? Technology users should understand when it is appropriate to contact someone and how to express themselves in a way that they can be understood correctly.",
+          "image": "man_with_letter.png"
+        },
+        {
+          "title": "Digital Rights and Responsibility: The privileges that all technology users have and the responsibilities that are expected of them.",
+          "description": "When you join a community or club, you are given opportunities and expected to take responsibility for the community. When using technology, you are joining a digital society; while you have the privilege of using technology, you must also act responsibly with others in that society. For example, if you see someone in danger online, you should call the authorities to alert them and help your community member."
+        },
+        {
+          "title": "Digital Commerce: Being an intelligent consumer when buying or selling goods online.",
+          "description": "When buying products online, it is important to know how to ensure the transaction is safe and that the seller or buyer is not a scammer. If using an online",
+          "image": "girl_with_cart.png"
+        },
+        {
+          "title": "Digital Health and Welfare: The physical and mental well-being of a technology user.",
+          "description": "A balance when using technology is necessary to maintain physical and mental health. Overusing electronic devices without a proper balance can lead to health issues, such as straining our eyes or an addiction in the case of excessive internet use. Moreover, using technology with poor posture or improper physical positions can hurt our bodies."
+        },
+        {
+          "title": "Digital Law: The legal rights and restrictions when using technology.",
+          "description": "Similar to the legal repercussions for inappropriate behavior in the physical world, there are also such consequences in the digital world. Such behavior can include cyberbullying, cyberstalking, and digital property theft."
+        }
+      ]
+    }
+  ]
+}

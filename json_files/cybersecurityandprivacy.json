@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Cyber-Security & Privacy",
+    "description": "Cybersecurity and privacy are significant issues that can impact a person's daily life. Lebanese authorities, such as Telecommunications Regulatory Authority, the Internal Security Forces, and the Lebanese General Security address relevant issues and advise citizens to be vigilant in the digital world.",
+    "image": "Password-Security--Streamline-Milano.png.png"
+  },
+  "learningCenter": {
+    "title": "Learning Center",
+    "cards": [
+      {
+        "title": "Account Protection",
+        "content": "Protect your online accounts such as social media and email.",
+        "image": "Vector (11).png",
+        "link": "/account-protection-screen"
+      },
+      {
+        "title": "Device Protection",
+        "content": "Protect your devices from remote and in-person vulnerabilities.",
+        "image": "Component.png",
+        "link": "/device-protection-screen"
+      },
+      {
+        "title": "Digital Privacy",
+        "content": "Maintain your privacy in the digital world",
+        "image": "solar_health-bold.png",
+        "link": "/digital_privacy_screen"
+      },
+      {
+        "title": "Blackmail",
+        "content": "Protect your online accounts such as social media and email.",
+        "image": "material-symbols_newspaper (1).png",
+        "link": "/blackmail-screen"
+      },
+      {
+        "title": "Cyberattacks",
+        "content": "Learn about cyberattacks and how to avoid them.",
+        "image": "material-symbols_newspaper (1).png",
+        "link": "/cyberattacks-screen"
+      }
+    ]
+  },
+  "relatedTopics": {
+    "title": "Related Topics",
+    "pinkCards": [
+      {
+        "title": "Setting up 2-Factor Authentication",
+        "content": "Keep your account safe with an extra security step."
+      },
+      {
+        "title": "Creating a password",
+        "content": "Learn how to create a strong, safe password."
+      },
+      {
+        "title": "Phishing",
+        "content": "A popular type cyberattacks is phishing. Learn how to protect yourself."
+      }
+    ]
+  }
+}
